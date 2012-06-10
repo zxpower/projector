@@ -41,15 +41,6 @@ CREATE TABLE `sillaj_event` (
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sillaj_event`
---
-
-LOCK TABLES `sillaj_event` WRITE;
-/*!40000 ALTER TABLE `sillaj_event` DISABLE KEYS */;
-INSERT INTO `sillaj_event` VALUES (1,1,1,'demo','13:00:00','14:00:00','01:00:00','2012-05-02','Spent time installing Sillaj','2012-05-02 10:28:42'),(2,1,1,'demo','08:00:00','20:00:00','12:00:00','2012-05-02','test?','2012-05-02 10:51:27'),(8,7,6,'demo','08:00:00','17:00:00','09:00:00','2012-05-02','','2012-05-03 13:07:11'),(4,3,2,'demo',NULL,NULL,'100:00:00','2012-05-02','','2012-05-02 11:12:02'),(5,6,5,'demo',NULL,NULL,'300:00:00','2012-05-02','','2012-05-02 11:22:38'),(6,6,5,'demo','08:00:00','20:00:00','12:00:00','2012-05-02','555','2012-05-02 11:26:15'),(7,5,4,'demo',NULL,NULL,'24:00:00','2012-05-02','aaa','2012-05-02 11:28:09'),(9,8,7,'demo',NULL,NULL,'12:00:00','2012-05-09','','2012-05-09 10:33:05'),(10,9,8,'demo',NULL,NULL,'05:00:00','2012-05-10','','2012-05-10 09:16:37'),(11,7,6,'demo',NULL,NULL,'02:00:00','2012-05-10','','2012-05-10 14:42:18'),(12,6,9,'demo','13:20:00','14:00:00','00:40:00','2012-06-06','','2012-06-06 13:05:31');
-/*!40000 ALTER TABLE `sillaj_event` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `sillaj_project`
@@ -74,16 +65,6 @@ CREATE TABLE `sillaj_project` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sillaj_project`
---
-
-LOCK TABLES `sillaj_project` WRITE;
-/*!40000 ALTER TABLE `sillaj_project` DISABLE KEYS */;
-INSERT INTO `sillaj_project` VALUES (1,'demo','Test project','1','Test project','1','1','2012-05-02 10:27:58'),(2,'demo','tests1','1','jknsd','0','1','2012-05-02 11:07:17'),(3,'demo','TESTS2','1','','0','1','2012-05-02 11:15:51'),(4,'demo','tests3','1','','0','1','2012-05-02 11:18:31'),(5,'demo','tests5555','1','555','0','1','2012-05-02 11:22:01'),(6,'demo','k-rauta','1','atziime','0','1','2012-05-03 13:06:26'),(7,'elvijs','tests1','1','aaa','1','1','2012-05-09 10:32:05'),(8,'demo','guilty klients a','1','pieziime','0','1','2012-05-10 09:15:54'),(9,'demo','maby','1','klients','0','1','2012-06-06 13:02:41');
-/*!40000 ALTER TABLE `sillaj_project` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `sillaj_task`
 --
 
@@ -106,16 +87,6 @@ CREATE TABLE `sillaj_task` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sillaj_task`
---
-
-LOCK TABLES `sillaj_task` WRITE;
-/*!40000 ALTER TABLE `sillaj_task` DISABLE KEYS */;
-INSERT INTO `sillaj_task` VALUES (1,'demo','Test task','1','Test task','1','1','2012-05-02 10:28:18'),(2,'demo','tests1','1','saygvx','0','1','2012-05-02 11:05:59'),(3,'demo','zjb','1','jsanb','0','1','2012-05-02 11:07:39'),(4,'demo','tests2','0','tests','0','1','2012-05-02 11:17:50'),(5,'demo','tests22','1','sd','0','1','2012-05-02 11:18:00'),(6,'demo','55555','1','sasd','0','1','2012-05-02 11:22:22'),(7,'demo','maketi nr1','1','','0','1','2012-05-03 13:06:39'),(8,'elvijs','darbs1','1','aaa','1','1','2012-05-09 10:32:22'),(9,'demo','uzdevums 1','1','aaa','0','1','2012-05-10 09:16:13'),(10,'demo','sapulce','1','ar klientu','0','1','2012-06-06 13:02:54');
-/*!40000 ALTER TABLE `sillaj_task` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `sillaj_task_project`
 --
 
@@ -130,16 +101,6 @@ CREATE TABLE `sillaj_task_project` (
   KEY `sillaj_task_project_FKIndex2` (`sillaj_project_intProjectId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sillaj_task_project`
---
-
-LOCK TABLES `sillaj_task_project` WRITE;
-/*!40000 ALTER TABLE `sillaj_task_project` DISABLE KEYS */;
-INSERT INTO `sillaj_task_project` VALUES (1,1),(1,9),(2,9),(3,2),(5,2),(5,3),(5,7),(6,5),(6,9),(7,6),(7,9),(8,7),(8,9),(9,8),(10,9);
-/*!40000 ALTER TABLE `sillaj_task_project` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `sillaj_user`
@@ -169,7 +130,7 @@ CREATE TABLE `sillaj_user` (
 
 LOCK TABLES `sillaj_user` WRITE;
 /*!40000 ALTER TABLE `sillaj_user` DISABLE KEYS */;
-INSERT INTO `sillaj_user` VALUES ('demo','Demo','Demo','contact@digiblink.eu','fe01ce2a7fbac8fafaed7c982a04e229','1','1','0','en','default'),('elvijs','elvijs','Elvijs','elvijs@adm.lv','e5e5cca3cfec7df5962fce1fb0ac87b7','1','1','0','en','default');
+INSERT INTO `sillaj_user` VALUES ('admin','Super','Admin','contact@digiblink.eu','fe01ce2a7fbac8fafaed7c982a04e229','1','1','0','en','default');
 /*!40000 ALTER TABLE `sillaj_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
