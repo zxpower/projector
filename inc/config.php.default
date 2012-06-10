@@ -150,6 +150,7 @@ if (key_exists(basename($_SERVER['PHP_SELF']), $arrMenu)) {
 // Available default smarty variable in all templates (other constants too can be used directly via {$smarty.const.MYCONSTANT}) :
 $smarty->assign(       'urlThemeDir', URL_ROOT_DIR_SILLAJ .'templates/'. $_SESSION['strThemeName'] .'/');      // Theme directory 
 $smarty->assign(         'urlImgDir', URL_ROOT_DIR_SILLAJ .'templates/'. $_SESSION['strThemeName'] .'/img/');
+$smarty->assign(        'systemLogo', 'logo_sillaj.png');
 $smarty->assign(     'fnLanguageTpl', $_SESSION['strLocale'] .'/lang.txt');     // Language config file
 $smarty->assign_by_ref(    'arrMenu', $arrMenu);                                // Menu elements from lang/??/php.php
 $smarty->assign(    'booDisplayMenu', true);                                    // no menu on login, error, signup pages (see these pages)

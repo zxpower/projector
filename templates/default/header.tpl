@@ -45,7 +45,7 @@
 <body{if ! empty($strOnload)} onload="{$strOnload}"{/if}>
   <div id="header">
     <a href="{$smarty.const.URL_ROOT_DIR_SILLAJ}" title="{#appliHome#}">
-      <img src="{$urlImgDir}logo_sillaj.png" width="64" height="70" id="logo" alt="{$smarty.const.STR_APPLI_NAME_SILLAJ}" />
+      <img src="{$urlImgDir}{$systemLogo}" width="64" height="70" id="logo" alt="{$smarty.const.STR_APPLI_NAME_SILLAJ}" />
     </a>
     <h1><a href="{$smarty.const.URL_ROOT_DIR_SILLAJ}" title="{#appliHome#}">{$smarty.const.STR_SITE_NAME_SILLAJ}</a></h1>    
     {if $booDisplayMenu}
