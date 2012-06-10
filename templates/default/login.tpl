@@ -15,9 +15,12 @@
   </fieldset>
 </form>
 <p>
+{*
   <a href="user.php" title="{#aTitleCreateAccount#}">{#aCreateAccount#}</a><br />
+*}
   <a href="mail.php" title="{#aTitleForgotEmail#}">{#aForgotEmail#}</a>
 </p>
+{*
 <p class="webmaster">
   <a href="mailto:{$smarty.const.STR_ADMIN_EMAIL_SILLAJ}" title="{#aTitleWriteAdmin#}">{#aWriteAdmin#}</a>
 </p>
@@ -26,4 +29,5 @@
   <a href="http://jigsaw.w3.org/css-validator/" title="{#cssValid#}"><img src="{$urlImgDir}ico_css.png" alt="CSS 3.0" height="15" width="80" /></a>
   <a href="http://www.w3.org/WAI/WCAG1AA-Conformance" title="{#accessValid#}"><img src="{$urlImgDir}ico_wai.png" alt="WAI-AA" height="15" width="80" /></a>
 </p>
+*}
 {include file='footer.tpl'}

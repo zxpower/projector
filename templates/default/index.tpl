@@ -16,11 +16,13 @@
       <legend>{if ! empty($booEdit)}{#legEditEvent#}{else}{#legAddEvent#}{/if}</legend>
       {include file='frmProjectTask.tpl'}
       <br />
+{*
       <div class="intervalInput">
         <label for="timDuration">{#labTimDuration#}</label><input type="text" id="timDuration" name="timDuration" accesskey="{#accTimDuration#}"{if ! empty($booEdit)} value="{$arrCurrentEvent.timDuration}"{/if} /> hh:mm<br />
-      </div>                  
+      </div>
+*}
       <div class="intervalInput">
-        <label for="timStart">{#or#} {#labTimStart#}</label><input type="text" id="timStart" name="timStart" accesskey="{#accTimStart#}"{if ! empty($booEdit)} value="{$arrCurrentEvent.timStart}"{/if} /> hh:mm<br />
+        <label for="timStart">{*{#or#} *}{#labTimStart#}</label><input type="text" id="timStart" name="timStart" accesskey="{#accTimStart#}"{if ! empty($booEdit)} value="{$arrCurrentEvent.timStart}"{/if} /> hh:mm<br />
         <label for="timEnd">{#labTimEnd#}</label><input type="text" id="timEnd" name="timEnd" accesskey="{#accTimEnd#}"{if ! empty($booEdit)} value="{$arrCurrentEvent.timEnd}"{/if} /> hh:mm<br />
       </div>
       <label for="strRem">{#labRem#}</label><input type="text" id="strRem" name="strRem" accesskey="{#accRem#}"{if ! empty($booEdit)} value="{$arrCurrentEvent.strRem|escape:"html"}"{/if} /><br />

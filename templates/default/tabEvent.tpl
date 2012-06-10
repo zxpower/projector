@@ -7,7 +7,7 @@
     <td class="date">{$arrEvent[i].datEvent|date_format:$smarty.const.STR_DATE_FORMAT_SILLAJ}</td>
     {/if}
     <td class="interval">{if ($arrEvent[i].timStart != '') || ($arrEvent[i].timEnd != '')}{$arrEvent[i].timStart} - {$arrEvent[i].timEnd}{/if}</td>     
-    <td class="duration">{if $arrEvent[i].timDuration != ''}{$arrEvent[i].timDuration}{/if}</td>            
+    <td class="duration">{if $arrEvent[i].timDuration != ''}{$arrEvent[i].timDuration}{/if}</td>
     <td class="occupation">
        <input type="radio" id="event{$arrEvent[i].intEventId}" name="intEventId" value="{$arrEvent[i].intEventId}"{if ! empty($booEdit) && ($arrEvent[i].intEventId == $intEventId)} checked="checked"{/if} />
        <label for="event{$arrEvent[i].intEventId}">             

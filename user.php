@@ -6,7 +6,7 @@
 require('./inc/config.php');
 
 // No $_POST data or not logged -> display the blank form
-if (!count($_POST) && (empty($_SESSION['strUserId']))) {
+if (!count($_POST) && (empty($_SESSION['strUserId'])) && BOO_ALLOW_REGISTER) {
     
     $smarty->assign(    'booDisplayMenu', false);                       // no need to display the menu (we're not logged)
     $smarty->assign_by_ref('arrTemplate', $sillaj->getTemplate());      // get default template
@@ -56,5 +56,10 @@ elseif (count($_POST)) {
 
         displayMessage($user->set());
     }
+}
+
+elseif (!BOO_ALLOW_REGISTER) {
+	header('Location: index.php');
+	exit();
 }
 ?>

@@ -131,7 +131,9 @@ function smarty_function_calendar($params, &$smarty) {
         $arrEvents = $params['events'];
     }
     
-    require('Calendar/Month/Weekdays.php'); // call PEAR::Calendar
+	define( 'CALENDAR_ROOT', 'lib/pear/Calendar/');
+	
+    require('lib/pear/Calendar/Month/Weekdays.php'); // call PEAR::Calendar
         
     $Month = new Calendar_Month_Weekdays($year, $month, INT_START_WEEK_DAY_SILLAJ);    
     $Month->build();
