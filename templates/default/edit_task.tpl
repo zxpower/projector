@@ -31,11 +31,13 @@
     </select>
     {/if}
     <br />
+{*
     <label for="cbxShare" accesskey="{#accShare#}">
       <input id="cbxShare" name="cbxShare" type="checkbox"{if ! empty($booEdit) && $booShare} checked="checked"{/if} />
       {#labShare#}
     </label>
     <br />
+*}
     <label for="cbxUseInReport" accesskey="{#accUseInReport#}">
       <input id="cbxUseInReport" name="cbxUseInReport" type="checkbox"{if (! empty($booEdit) && $booUseInReport)  || ! isset($booUseInReport)} checked="checked"{/if} />
       {#labUseInReport#}

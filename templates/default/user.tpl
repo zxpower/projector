@@ -18,7 +18,8 @@
     {if $smarty.const.BOO_ALLOW_EVERYONE_REPORT_SILLAJ}
     <label for="cbxAllowOther" accesskey="{#accAllowOther#}"><input type="checkbox" id="cbxAllowOther" name="cbxAllowOther"{if ! empty($booEdit) && $arrUser.booAllowOther} checked="checked"{/if} /> {#labAllowOther#}</label><br />
     {/if}
-    <label for="cbxUseShare" accesskey="{#accUseShare#}"><input id="cbxUseShare" name="cbxUseShare" type="checkbox"{if ! empty($booEdit) && $arrUser.booUseShare} checked="checked"{/if} />{#labUseShare#}</label><br />  
+{*
+    <label for="cbxUseShare" accesskey="{#accUseShare#}"><input id="cbxUseShare" name="cbxUseShare" type="checkbox"{if ! empty($booEdit) && $arrUser.booUseShare} checked="checked"{/if} />{#labUseShare#}</label><br />
     <label for="strLanguage" accesskey="{#accLanguage#}">{#labLanguage#}</label>
     <select id="strLanguage" name="strLanguage">
       {html_options options=$arrLanguage selected=$arrUser.strLanguage}
@@ -27,6 +28,7 @@
     <select id="strTemplate" name="strTemplate">
       {html_options values=$arrTemplate output=$arrTemplate selected=$arrUser.strTemplate}
     </select><br />
+*}
     <button type="submit" accesskey="{#accSubmit#}">{#inpSubmit#}</button>
     <button type="reset" accesskey="{#accReset#}">{#inpReset#}</button>
   </fieldset>
