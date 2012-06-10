@@ -5,3 +5,4 @@ templates/default/templates_c/*.php
 inc/config.php
 .DS_Store
 .htaccess
+sa/config.php
