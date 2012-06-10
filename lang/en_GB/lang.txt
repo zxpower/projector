@@ -1,0 +1,179 @@
+appliHome = Home
+liToday = Today
+dayPrev = Previous day
+dayNext = Next day
+theme = Theme
+defaultTheme = Default theme
+or = or
+
+inpSubmit = <span class="accesskey">O</span>K
+accSubmit = o
+inpReset = <span class="accesskey">R</span>eset
+accReset = r
+inpEdit = <span class="accesskey">E</span>dit
+accEdit = e
+titleEdit = Éditer
+inpDelete = <span class="accesskey">D</span>elete
+accDelete = d
+
+labLogin = <span class="accesskey">L</span>ogin
+accLogin = l
+labPassword = <span class="accesskey">P</span>assword
+accPassword = p
+
+labProject = <span class="accesskey">P</span>roject
+accProject = p
+noTask = No task available
+
+labTask = <span class="accesskey">T</span>ask
+accTask = t
+noProject = No project available
+
+labRem = Re<span class="accesskey">m</span>ark
+accRem = m
+
+labShare = Share
+accShare = s
+
+labUseInReport = Use in reports
+accUseInReport = u
+
+aTask = Add tasks
+aProject = Add projects
+
+sillajHomepage = Go to sillaj home page
+xhtmlValid = Valid XHTML 1.1
+cssValid = Valid CSS 3.0
+accessValid = Accessibility checked
+for = for
+rssFeed = RSS feed
+atomFeed = Atom feed
+
+project = Project
+task = Task
+sumWorked = Sum
+
+labKeyword = Se<span class="accesskey">a</span>rch
+accKeyword = a
+
+aTitleTools = Data management tools
+altTools = Tools
+
+aGantt = Gantt graph
+
+[edit_project]
+labTask = Associated <span class="accesskey">T</span>ask
+aTitleTask = Go to the task manager
+editProject = Edit a project
+addProject = Add a project
+aEventForProject = Events
+aTitleEventForProject = Events for this project
+aTitleGanttForProject = Gantt graph for this projet
+
+[edit_task]
+labProject = Associated <span class="accesskey">P</span>rojects
+aTitleProject = Go to the project manager
+editTask = Edit a task
+addTask = Add a task
+aEventForTask = Events
+aTitleEventFortask = Events for this task
+aTitleGanttForTask = Gantt graph for this task
+
+[index]
+liDaySelected = Current day
+liDayEvent = Existing event
+legAddEvent = Add an event
+legEditEvent = Edit an event
+labTimStart = <span class="accesskey">S</span>tart
+accTimStart = s
+labTimEnd = <span class="accesskey">E</span>nd
+accTimEnd = e
+labTimDuration = D<span class="accesskey">u</span>ration
+accTimDuration = u
+sumEvent = Event
+sumByDay = Day sum
+
+[login]
+aCreateAccount = Create an account
+aTitleCreateAccount = New users must create an account before accessing the service
+login = Login
+javascriptNeeded = Javascript must be activated to enjoy all features
+aForgotEmail = Forgot your password ?
+aTitleForgotEmail = Get a new password by email
+aTitleWriteAdmin = Send an email to the webmaster
+aWriteAdmin = Webmaster
+
+[project]
+aAddProject = Add a project
+aTitleAddProject = Add a new project
+
+[task]
+aAddTask = Add a task
+aTitleAddTask = Add a new task
+
+[user]
+labName = <span class="accesskey">N</span>ame
+accName = n
+labFirstname = <span class="accesskey">F</span>irst name
+accFirstname = f
+labEmail = <span class="accesskey">E</span>mail
+accEmail = e
+notModifiedIfEmpty = not modified if left empty
+editUser = Edit user information
+addUser = Add a user
+# identifiedAs = You are identified as
+labAllowOther = <span class="accesskey">A</span>llow the other users to access my reports
+accAllowOther = a
+labLanguage = <span class="accesskey">L</span>anguage
+accLanguage = l
+labTemplate = <span class="accesskey">T</span>emplate
+accTemplate = t
+labUseShare = <span class="accesskey">U</span>se shared projects and tasks
+accUseShare = u
+sendTo = Send to
+
+[report]
+timeInterval = Time span
+labDatStart = <span class="accesskey">S</span>tart
+accDatStart = s
+labDatEnd = <span class="accesskey">E</span>nd
+accDatEnd = e
+reportType = Group by
+sort = Sort by
+accAlpha = b
+labAlpha = Alpha<span class="accesskey">b</span>etically
+accTime = u
+labTime = D<span class="accesskey">u</span>ration
+user = User
+labFor = <span class="accesskey">F</span>or
+accFor = f
+labDetail = <span class="accesskey">D</span>etails
+accDetail = d
+currentWeek = Current week
+previousWeek = Previous week
+currentMonth = Current month
+previousMonth = Previous month
+currentYear = Current year
+previousYear = Previous year
+choseDate = Chose a date
+
+duration = Duration
+from = From
+to = to
+seeEvents = See events
+For = For
+excelDownload = Export to spreadsheet
+
+[search]
+result = result for
+results = results for
+
+[tool]
+move = Move events
+from = From
+to = to
+
+[gantt]
+aPrevGantt = Previous date
+aNextGantt = Next date
+selSpan = Span (month)

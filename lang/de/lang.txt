@@ -1,0 +1,185 @@
+appliHome = Home
+liToday = Heute
+dayPrev = Gestern
+dayNext = Morgen
+theme = Thema
+defaultTheme = Standard Thema
+or = oder
+
+inpSubmit = <span class="accesskey">O</span>K
+accSubmit = o
+inpReset = <span class="accesskey">R</span>eset
+accReset = r
+inpEdit = <span class="accesskey">B</span>earbeiten
+accEdit = b
+titleEdit = Bearbeiten
+inpDelete = <span class="accesskey">L</span>öschen
+accDelete = l
+
+labLogin = Log<span class="accesskey">i</span>n
+accLogin = i
+labPassword = Pass<span class="accesskey">w</span>ort
+accPassword = w
+
+labCustomer = <span class="accesskey">K</span>unde
+accCustomer = k
+labProject = <span class="accesskey">P</span>rojekt
+accProject = p
+noTask = keine Tätigkeit verfügbar
+
+labTask = <span class="accesskey">T</span>ätigkeit
+accTask = t
+noProject = kein Projekt verfügbar
+
+labRem = Ko<span class="accesskey">m</span>mentar
+accRem = m
+
+labShare = Gemeinsamer <span class="accesskey">Z</span>ugriff
+accShare = z
+
+labUseInReport = In Bericht <span class="accesskey">a</span>nzeigen
+accUseInReport = a
+
+aTask = Tätigkeit hinzufügen
+aProject = Projekt hinzufügen
+
+sillajHomepage = Gehe zu Sillaj home page
+xhtmlValid = Gültiges XHTML 1.1
+cssValid = Gültiges CSS 3.0
+accessValid = Zugänglichkeit geprüft
+for = für
+rssFeed = RSS feed
+atomFeed = Atom feed
+
+project = Projekt
+task = Tätigkeit
+sumWorked = Summe
+
+labKeyword = <span class="accesskey">S</span>uche
+accKeyword = s
+
+aTitleTools = Datenverwaltungswerkzeuge
+altTools = Werkzeuge
+
+aGantt = Gantt Graph
+
+[edit_project]
+labTask = Verknüpft mit <span class="accesskey">T</span>ätigkeit
+aTitleTask = Gehe zur Tätigkeitsverwaltung
+editProject = Projekt bearbeiten
+addProject = Projekt hinzufügen
+aEventForProject = Ereignisse
+aTitleEventForProject = Ereignisse für dieses Projekt
+aTitleGanttForProject = Gantt Graph für dieses Projekt
+
+[edit_task]
+labCustomer = Verknüpft mit <span class="accesskey">K</span>unden
+aTitleCustomer = Gehe zur Kundenverwaltung
+labProject = Verknüpft mit <span class="accesskey">P</span>rojekten
+aTitleProject = Gehe zur Projektverwaltung
+editTask = Tätigkeit bearbeiten
+addTask = Tätigkeit hinzufügen
+aEventForTask = Ereignisse
+aTitleEventFortask = Ereignisse für diese Tätigkeit
+aTitleGanttForTask = Gantt Graph für diese Tätigkeit
+
+[index]
+liDaySelected = gewählter Tag
+liDayEvent = Bestehendes Ereignis
+legAddEvent = Ereignis hinzufügen
+legEditEvent = Ereignis bearbeiten
+labTimStart = <span class="accesskey">S</span>tart
+accTimStart = s
+labTimEnd = <span class="accesskey">E</span>nde
+accTimEnd = e
+labTimPause = <span class="accesskey">P</span>ause
+accTimPause = p
+labTimDuration = Da<span class="accesskey">u</span>er
+accTimDuration = u
+sumEvent = Ereignis
+sumByDay = Tages Summe
+
+[login]
+aCreateAccount = Account erstellen
+aTitleCreateAccount = Um eine Zugang zu erhalten müssen neue Nutzer einen Account erstellen
+login = Login
+javascriptNeeded = Javascript muss aktiviert sein um alle Features zu geniessen
+aForgotEmail = Passwort vergessen?
+aTitleForgotEmail = ein neues Passwort per eMail anfordern
+aTitleWriteAdmin = eine eMail an den Webmaster schicken
+aWriteAdmin = Webmaster
+
+[project]
+aAddProject = Projekt hinzufügen
+aTitleAddProject = Neues Projekt hinzufügen
+
+[task]
+aAddTask = Tätigkeit hinzufügen
+aTitleAddTask = Neue Tätigkeit hinzufügen
+
+[user]
+labName = <span class="accesskey">N</span>ame
+accName = n
+labFirstname = <span class="accesskey">V</span>orname
+accFirstname = v
+labEmail = <span class="accesskey">e</span>Mail
+accEmail = e
+notModifiedIfEmpty = Feld leer lassen um es nicht zu verändern
+editUser = Nutzer Information bearbeiten
+addUser = Nutzer hinzufügen
+identifiedAs = Sie sind identifiziert als
+labAllowOther = <span class="accesskey">E</span>rlaube den anderen Nutzern meine Berichte zu sehen
+accAllowOther = e
+labLanguage = <span class="accesskey">S</span>prache
+accLanguage = s
+labTemplate = <span class="accesskey">T</span>emplate
+accTemplate = t
+labUseShare = <span class="accesskey">N</span>utze gemeinsame Projekte und Tätigkeiten
+accUseShare = n
+sendTo = Schicke an
+
+[report]
+timeInterval = Zeitspanne
+labDatStart = <span class="accesskey">S</span>tart
+accDatStart = s
+labDatEnd = <span class="accesskey">E</span>nde
+accDatEnd = e
+reportType = Gruppiert mit
+sort = Sortiert mit
+accAlpha = b
+labAlpha = Alpha<span class="accesskey">b</span>etisch
+accTime = u
+labTime = Da<span class="accesskey">u</span>er
+user = Nutzer
+labFor = <span class="accesskey">F</span>ür
+accFor = f
+labDetail = <span class="accesskey">D</span>etails
+accDetail = d
+currentWeek = Diese Woche
+previousWeek = Letzte Woche
+currentMonth = Dieser Monat
+previousMonth = Letzter Monat
+currentYear = Dieses Jahr
+previousYear = Letztes Jahr
+choseDate = Ein Datumsbereich angeben 
+
+duration = Dauer
+from = Von
+to = bis
+seeEvents = Ereignisse anzeigen
+For = Für
+excelDownload = Export als spreadsheet
+
+[search]
+result = Resultat für
+results = Resultate für
+
+[tool]
+move = Verschiebe Ereignisse
+from = Von
+to = bis
+
+[gantt]
+aPrevGantt = Voriges Datum
+aNextGantt = Nächstes Datum
+selSpan = Spanne (Monat)

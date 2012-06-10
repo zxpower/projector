@@ -1,0 +1,307 @@
+ body {
+    margin:0;
+    padding:0 1em 0 1em;
+    font-size:70%;
+    font-family:verdana, arial, helvetica, sans-serif;
+    background-color:white; 
+
+}
+h1 {
+    font-size:1.5em;
+    font-weight:900;
+    color:#3B74B3;
+}
+h2 {    
+    color:purple;
+    font-size:1.5em;
+    font-weight:600;    
+    border-color:#3B74B3;
+    border-style:solid;
+    border-width:0 0 1px 0;
+    margin-bottom:1em;
+}    
+h3 {
+    color:purple;
+    font-size:1.3em;
+    font-weight:600; 
+}
+h4 {
+    color:purple;
+    font-size:1.1em;
+    font-style:italic;
+    font-weight:400; 
+    text-indent:3em;
+}
+p {
+    margin:0em 0em 1em 0em;
+    padding:0em;
+    text-align:justify;
+}    
+img {
+    border:0em;
+}        
+a {
+    color:#21456D;
+    text-decoration:none;
+    font-weight:600;
+}
+a:link {
+    color:red;
+}
+a:visited {
+    color:pink;
+}
+a:hover {
+    background-color:#eee;
+}
+
+input[type="submit"], input[type="reset"], button {
+    width:6em;
+    color:#21456D;
+    border:1px solid #ff00ff;
+    background-color:#eee;
+}
+button {
+    font-size:.8em;
+}
+input[type="text"], input[type="password"] {
+    width:15em;
+    border:1px solid #21456D;
+    margin-bottom:2px;
+}
+fieldset {
+    background-color:#ffccff;
+    border:1px silver solid;
+    -moz-border-radius:2em;
+    border-radius:2em;
+   
+}
+table {
+    border-collapse:collapse;  
+}
+th {
+    background-color:#e6e6e6;
+    border-bottom:1px solid purple;
+    text-align:center;
+    vertical-align:top;
+}
+tr:first-child th {
+    border-bottom:2px solid purple;
+}
+td {
+    border-bottom:1px solid gray;
+}    
+
+/* header */
+#header {
+    margin:0;
+}
+#logo {
+    float:left;
+    margin-right:1em;
+}
+
+/* footer */
+#footer {
+    text-align:right;
+}
+.standard {
+    text-align:right;
+}
+
+/* Menu */
+#menu li {
+    display:inline;
+    padding:0;
+} 
+#toolbar {
+    background-color:#f0f8ff;
+    border:3px silver solid;
+    padding:.5em;
+    margin-left:2em;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+/*
+#menu li:after {
+    content:"|";
+}*/
+.menuTab {
+    background-color:white;
+    border:1px silver solid;
+    padding:0 .5em 0 .5em;
+    margin:0;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.menuTabSelected {
+    background-color:#eee;
+    border:1px silver solid;
+    padding:0 .5em 0 .5em;
+    margin:0;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+/* global class (on all pages or almost)*/
+.info {
+    color:red;
+    padding:.5em;
+    font-weight:bold;
+    background-color:#e6e6e6;
+    -moz-border-radius:2em;
+    border-radius:2em;
+    border:3px silver solid;   
+}
+.accesskey {
+    text-decoration:underline;
+}
+
+/* calendar in index.tpl*/
+.today {
+    color:gray;
+    font-weight:normal;
+}
+.day {
+    color:purple;
+}
+.daySelected {
+    color:orange;
+}
+.dayEvent {
+    color:green;
+}
+#calendarBox, #calendarKey {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+} 
+#calendarKey {
+    position:relative;
+    top:-10em;
+    left:-12em;
+    width:8em;
+}
+#calendarBox h3 {
+    text-align:center;
+}
+#calendarTable, #calendarTable caption {
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+/* index.tpl */
+#formAndCalendar {
+ float:left;    
+ width:60%;
+ margin-right:2em;
+}
+#divLoading {
+    display:none;
+}
+#frmEvent { /* à modifier */
+    position:relative;
+    top:-3em;
+}
+#frmEvent select, input[type="text"]  {
+    width:15em;
+}
+.intervalInput {
+    background-color:#e6e6e6;
+    width:35em;
+    margin-bottom:2px;
+}
+.interval, .duration {
+    background-color:#99ccff;  
+    padding:0 .3em 0 .3em;  
+    vertical-align:top;
+}
+.duration {
+    border-left:1px silver solid;
+}
+.occupation {
+    background-color:#f0f8ff;
+}
+.project, .main {
+    font-weight:bold;
+}
+.task, .sub {
+    font-style:italic;
+}
+.index {
+    text-align:right;
+    padding-right:.5em;
+}
+.rem {
+    font-size:.8em;
+    text-align:right;
+    margin-bottom:0;
+}
+.eventEdited .interval, .eventEdited .duration {
+	background-color:silver;
+}
+.eventEdited .occupation {
+    background-color:#cccccc;
+}
+#frmEvent .info, #frmProject .info, #frmTask .info { /* avoid box overlapping when no project/task */
+    border:0px;   
+    background:none;
+}
+
+/* frmReport.tpl */
+#datStart, #datEnd {
+    width:auto;
+}
+#datStart {
+    margin-top:.2em;
+}
+
+/*report.tpl */
+.percent {
+    text-align:right;
+    padding-left:.5em;
+}
+.sub {
+    text-align:right;
+    padding-right:2em;
+}
+.main {
+    background-color:#ccccff;
+}
+#frmReportDetail {
+    margin:0;
+    padding:0;
+}
+
+/* event.tpl */
+.date {
+    background-color:#3399ff;
+    vertical-align:top;
+}
+#frmEvent label, #frmProject label, #frmTask label, #frmLogin label, #frmUser label, #frmReport label {
+    float:left;
+    text-align:right;
+    padding-right:1em;
+    width: 10em;
+} 
+#fldReportType, #fldSort {
+    float:right;
+}
+#fldReportType label, #fldSort label, label[for="cbxAllowOther"] {
+    float:none;
+    text-align:left;
+    padding-right:0;
+    width:auto;
+}
+#frmSearch, #frmSearch div,  #menu {
+    display:inline;
+}
+#frmSearch input {
+    margin:0;
+    width:8em;
+    font-size:.9em;
+}
+#frmSearch input[type="submit"] {
+    width:5em;
+}

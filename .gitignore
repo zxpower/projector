@@ -1,0 +1,5 @@
+cache/*.tpl
+cache/*.png
+cache/*.txt
+templates/default/templates_c/*.php
+inc/config.php

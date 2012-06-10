@@ -1,0 +1,180 @@
+appliHome = Hem
+liToday = Idag
+dayPrev = Föregående dag
+dayNext = Nästa dag
+theme = Tema
+defaultTheme = Grundtema
+or = eller
+
+inpSubmit = <span class="accesskey">O</span>K
+accSubmit = o
+inpReset = <span class="accesskey">R</span>eset
+accReset = r
+inpEdit = <span class="accesskey">E</span>ditera
+accEdit = e
+titleEdit = Editera
+inpDelete = Ra<span class="accesskey">d</span>era
+accDelete = d
+
+labLogin = <span class="accesskey">L</span>ogin
+accLogin = l
+labPassword = Lö<span class="accesskey">s</span>enord
+accPassword = s
+
+labProject = <span class="accesskey">P</span>rojekt
+accProject = p
+noTask = Ingen uppgift tillgänglig
+
+labTask = Uppgif<span class="accesskey">t</span>
+accTask = t
+noProject = Inget projekt tillgängligt
+
+labRem = Ko<span class="accesskey">m</span>mentar
+accRem = m
+
+labShare = Dela
+accShare = a
+
+labUseInReport = Använd i rapporter
+accUseInReport = n
+
+aTask = Lägg till uppgift
+aProject = Lägg till projekt
+
+sillajHomepage = Hoppa sillajs hemsida
+xhtmlValid = Valid XHTML 1.1
+cssValid = Valid CSS 3.0
+accessValid = Tillgägnlighet kollad
+for = för
+rssFeed = RSS-flöde
+atomFeed = Atom-flöde
+
+project = Projekt
+task = Uppgift
+sumWorked = Summa
+
+labKeyword = Sö<span class="accesskey">k</span>
+accKeyword = k
+
+aTitleTools = Datahanteringsverktyg
+altTools = Verktyg
+
+
+aGantt = Gantt-graf
+
+[edit_project]
+labTask = Associerade uppgif<span class="accesskey">t</span>er
+aTitleTask = Gå till uppgiftshanteringen
+editProject = Editera ett projekt
+addProject = Lägg till ett projekt
+aEventForProject = Händelser
+aTitleEventForProject = Händelser för detta projekt
+aTitleGanttForProject = Gantt-graf för detta projekt
+
+[edit_task]
+labProject = Associerade <span class="accesskey">P</span>rojekt
+aTitleProject = Gå till projekthanteringen
+editTask = Editera en uppgift
+addTask = Lägg till en uppgift
+aEventForTask = Händelser
+aTitleEventFortask = Händelser för denna uppgift
+aTitleGanttForTask = Gantt-graf för denna uppgift
+
+[index]
+liDaySelected = Nuvarande dag
+liDayEvent = Existerande händelser
+legAddEvent = Lägg till en händelse
+legEditEvent = Editera en händelse
+labTimStart = <span class="accesskey">S</span>tart
+accTimStart = s
+labTimEnd = Sl<span class="accesskey">u</span>t
+accTimEnd = u
+labTimDuration = <span class="accesskey">L</span>ängd
+accTimDuration = l
+sumEvent = Händelse
+sumByDay = Dagssumma
+
+[login]
+aCreateAccount = Skapa ett konto
+aTitleCreateAccount = Nya användare måsta skapa ett konto innan dom kan använda tjänsten
+login = Login
+javascriptNeeded = Javascript måste vara aktivatat i webläsaren för att alla funktioner skall fungera
+aForgotEmail = Glömt ditt lösenord?
+aTitleForgotEmail = Få ett nytt lösenord via email
+aTitleWriteAdmin = Skicka email till webmaster
+aWriteAdmin = Webmaster
+
+[project]
+aAddProject = Lägg till ett projelt
+aTitleAddProject = Lägg till ett nytt projekt
+
+[task]
+aAddTask = Lägg till en uppgift
+aTitleAddTask = Lägg till en ny uppgift
+
+[user]
+labName = <span class="accesskey">N</span>amn
+accName = n
+labFirstname = <span class="accesskey">F</span>örnamn
+accFirstname = f
+labEmail = <span class="accesskey">E</span>mail
+accEmail = e
+notModifiedIfEmpty = inte modifierad om den lämnas tom
+editUser = Editera användarinformation
+addUser = Lägg till en användare
+# identifiedAs = Du är identifierad som
+labAllowOther = Tillåt <span class="accesskey">a</span>ndra användare att komma åt mina rapporter
+accAllowOther = a
+labLanguage = <span class="accesskey">S</span>pråk
+accLanguage = s
+labTemplate = <span class="accesskey">M</span>all
+accTemplate = m
+labUseShare = An<span class="accesskey">v</span>änd delade projekt och uppgifter
+accUseShare = v
+sendTo = Skicka till
+
+[report]
+timeInterval = Tidsintervall
+labDatStart = <span class="accesskey">S</span>tart
+accDatStart = s
+labDatEnd = Sl<span class="accesskey">u</span>t
+accDatEnd = u
+reportType = Gruppare efter
+sort = Sortera på
+accAlpha = b
+labAlpha = Alfa<span class="accesskey">b</span>etiskt
+accTime = l
+labTime = <span class="accesskey">L</span>ängd
+user = Användare
+labFor = <span class="accesskey">F</span>ör
+accFor = f
+labDetail = <span class="accesskey">D</span>etaljer
+accDetail = d
+currentWeek = Nuvarande vecka
+previousWeek = Föregående vecka
+currentMonth = Nuvarande månad
+previousMonth = Föregående månad
+currentYear = Nuvarande år
+previousYear = Föregående år
+choseDate = Välj ett datum
+
+duration = Längd
+from = Från
+to = till
+seeEvents = Se händelser
+For = För
+excelDownload = Exportera till spreadsheet
+
+[search]
+result = resultat för
+results = resultat för
+
+[tool]
+move = Flytta händelser
+from = Från
+to = till
+
+[gantt]
+aPrevGantt = Föregående
+aNextGantt = Näst
+selSpan = Tidrymd (månad)

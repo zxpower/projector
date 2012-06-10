@@ -1,0 +1,179 @@
+appliHome = Accueil
+liToday = Aujourd'hui
+dayPrev = Jour précédent
+dayNext = Jour suivant
+theme = Thème
+defaultTheme = Thème de base
+or = ou
+
+inpSubmit = <span class="accesskey">V</span>alider
+accSubmit = v
+inpReset = <span class="accesskey">R</span>AZ
+accReset = r
+inpEdit = <span class="accesskey">E</span>diter
+accEdit = e
+titleEdit = Éditer
+inpDelete = <span class="accesskey">S</span>upprimer
+accDelete = s
+
+labLogin = <span class="accesskey">L</span>ogin
+accLogin = l
+labPassword = <span class="accesskey">M</span>ot de passe
+accPassword = m
+
+labProject = <span class="accesskey">P</span>rojet
+accProject = p
+noTask = Aucune activité disponible
+
+labTask = <span class="accesskey">A</span>ctivité
+accTask = a
+noProject = Aucun projet disponible
+
+labShare = Partager
+accShare = p
+
+labUseInReport = Utiliser dans les rapports
+accUseInReport = u
+
+labRem = Re<span class="accesskey">m</span>arque
+accRem = m
+
+aProject = Ajouter des projets
+aTask = Ajouter des activités
+
+sillajHomepage = Site de Sillaj
+xhtmlValid = Site Valide XHTML 1.1
+cssValid = Site valide CSS 3.0
+accessValid = Accessibilité vérifiée
+for = pour
+rssFeed = Flux RSS
+atomFeed = Flux Atom
+
+sumWorked = Total
+project = Projet
+task = Activité
+
+labKeyword = <span class="accesskey">C</span>hercher
+accKeyword = c
+
+aTitleTools = Outils de gestion des données
+altTools = Outils
+
+aGantt = Diagramme de Gantt
+
+[edit_project]
+labTask = <span class="accesskey">A</span>ctivités associées
+aTitleTask = Aller au gestionnaire des activités
+editProject = Modifier un projet
+addProject = Ajouter un projet
+aEventForProject = Événements
+aTitleEventForProject = Voir les événements de ce projet
+aTitleGanttForProject = Voir le diagramme de Gantt de ce projet
+
+[edit_task]
+labProject = <span class="accesskey">P</span>rojets associés
+aTitleProject = Aller au gestionnaire des projets
+editTask = Modifier une activité
+addTask = Ajouter une activité
+aEventForTask = Événements
+aTitleEventForTask = Voir les événements de cette activité
+aTitleGanttForTask = Voir le diagramme de Gantt de cette activité
+
+[index]
+liDaySelected = Jour courant
+liDayEvent = Jours saisis
+legAddEvent = Ajouter un événement
+legEditEvent = Modifier un événement
+labTimStart = <span class="accesskey">D</span>ébut
+accTimStart = d
+labTimEnd = <span class="accesskey">F</span>in
+accTimEnd = f
+labTimDuration = D<span class="accesskey">u</span>rée
+accTimDuration = u
+sumEvent = Événements
+sumByDay = Total du jour
+
+[login]
+aCreateAccount = Créer un compte
+aTitleCreateAccount = Les nouveaux utilisateurs doivent créer un compte avant d'utiliser le service
+login = Connexion
+javascriptNeeded = Javascript doit être activé pour un fonctionnement optimal
+aForgotEmail = Mot de passe oublié ?
+aTitleForgotEmail = Recevoir un nouveau mot de passe par courriel
+aTitleWriteAdmin = Envoyer un courriel au webmestre
+aWriteAdmin = Webmestre
+
+[project]
+aAddProject = Ajouter un projet
+aTitleAddProject = Ajouter un nouveau projet
+
+[task]
+aAddTask = Ajouter une activité
+aTitleAddTask = Ajouter une nouvelle activité
+
+[user]
+labName = <span class="accesskey">N</span>om
+accName = n
+labFirstname = <span class="accesskey">P</span>rénom
+accFirstname = p
+labEmail = <span class="accesskey">E</span>mail
+accEmail = e
+notModifiedIfEmpty = Non modifié si laissé vide
+editUser = Modifier l'utilisateur
+addUser = Ajouter un utilisateur
+# identifiedAs = Identifié en tant que
+labAllowOther = <span class="accesskey">A</span>utoriser les autres utilisateurs à consulter mes rapports
+accAllowOther = a
+labLanguage = <span class="accesskey">L</span>angue
+accLanguage = l
+labTemplate = M<span class="accesskey">o</span>dèle
+accTemplate = o
+labUseShare = <span class="accesskey">U</span>tiliser les projets et activités partagés
+accUseShare = u
+sendTo = Envoyer à
+
+[report]
+timeInterval = Intervalle temporel
+labDatStart = <span class="accesskey">D</span>ébut
+accDatStart = d
+labDatEnd = <span class="accesskey">F</span>in
+accDatEnd = f
+reportType = Grouper par
+sort = Trier par
+accAlpha = b
+labAlpha = Alpha<span class="accesskey">b</span>étique
+accTime = u
+labTime = D<span class="accesskey">u</span>rée
+user = Utilisateur
+labFor = <span class="accesskey">P</span>our
+accFor = p
+labDetail = Dé<span class="accesskey">t</span>ails
+accDetail = t
+currentWeek = Cette semaine
+previousWeek = Semaine dernière
+currentMonth = Ce mois
+previousMonth = Mois dernier
+currentYear = Cette année
+previousYear = Année dernière
+choseDate = Choisir une date
+
+duration = Durée
+from = Du
+to = au
+seeEvents = Voir les événements
+For = Pour
+excelDownload = Exporter vers un tableur
+
+[search]
+result = résultat pour
+results = résultats pour
+
+[tool]
+move = Déplacer les événements
+from = De
+to = Vers
+
+[gantt]
+aPrevGantt = Période précédente
+aNextGantt = Période suivante
+selSpan = Durée (mois)

@@ -1,0 +1,178 @@
+appliHome = Home
+liToday = Vandaag
+dayPrev = Gisteren
+dayNext = Morgen
+theme = Thema
+defaultTheme = Standaard thema
+or = of
+
+inpSubmit = <span class="accesskey">O</span>K
+accSubmit = o
+inpReset = <span class="accesskey">R</span>eset
+accReset = r
+inpEdit = <span class="accesskey">W</span>ijzig
+accEdit = w
+titleEdit = Wijzigen
+inpDelete = <span class="accesskey">V</span>erwijder
+accDelete = d
+
+labLogin = <span class="accesskey">L</span>og in
+accLogin = l
+labPassword = <span class="accesskey">W</span>achtwoord
+accPassword = w
+
+labProject = <span class="accesskey">P</span>roject
+accProject = p
+noTask = Geen activiteiten beschikbaar
+
+labTask = <span class="accesskey">A</span>ctiviteiten
+accTask = a
+noProject = Geen projecten beschikbaar
+
+labRem = Op<span class="accesskey">m</span>erking
+accRem = m
+
+labShare = Delen
+accShare = d
+
+labUseInReport = Gebruik in rapporten
+accUseInReport = g
+
+aTask = Voeg activiteiten toe
+aProject = Voeg projecten toe
+
+sillajHomepage = Ga naar Sillaj home page
+xhtmlValid = Geldig XHTML 1.1
+cssValid = Geldig CSS 3.0
+accessValid = Toegankelijkheid gecontroleerd
+for = voor
+
+project = Project
+task = Activiteit
+sumWorked = Som
+
+labKeyword = Zo<span class="accesskey">e</span>ken
+accKeyword = e
+
+aTitleTools = Data management tools
+altTools = Tools
+
+aGantt = Planning
+
+[edit_project]
+labTask = Toegewezen <span class="accesskey">A</span>ctiviteit
+aTitleTask = Ga naar Activiteitenmanager
+editProject = Wijzig project
+addProject = Voeg project toe
+aEventForProject = Werkzaamheden
+aTitleEventForProject = Werkzaamheden voor dit project
+aTitleGanttForProject = Planning voor dit project
+
+[edit_task]
+labProject = Toegewezen <span class="accesskey">P</span>rojecten
+aTitleProject = Ga naar de projectmanager
+editTask = Wijzig activiteit
+addTask = Voeg activiteit toe
+aEventForTask = Werkzaamheden
+aTitleEventFortask = Werkzaamheden voor deze activiteit
+aTitleGanttForTask = Planning voor deze activiteit
+
+[index]
+liDaySelected = Selectie
+liDayEvent = Activiteiten
+legAddEvent = Voeg werkzaamheden toe
+legEditEvent = Wijzig werkzaamheden
+labTimStart = <span class="accesskey">S</span>tart
+accTimStart = s
+labTimEnd = <span class="accesskey">E</span>inde
+accTimEnd = e
+labTimDuration = D<span class="accesskey">u</span>ur
+accTimDuration = u
+sumEvent = Werkzaamheden
+sumByDay = Dag som
+rssFeed = RSS feed
+
+[login]
+aCreateAccount = Maak een account aan
+aTitleCreateAccount = Nieuwe gebruikers moeten een account aanmaken voordat ze van dit programma gebruik kunnen maken
+login = Log in
+javascriptNeeded = Javascript moet geactiveerd zijn om van alle opties gebruik te kunnen maken
+aForgotEmail = Wachtwoord vergeten?
+aTitleForgotEmail = Stuur een nieuw wachtwoord per mail toe
+aTitleWriteAdmin = Stuur een email aan de Webmaster
+aWriteAdmin = Webmaster
+
+[project]
+aAddProject = Voeg een project toe
+aTitleAddProject = Voeg een nieuw project toe
+
+[task]
+aAddTask = Voeg een activiteit toe
+aTitleAddTask = Voeg een nieuwe activiteit toe
+
+[user]
+labName = Achter<span class="accesskey">n</span>aam
+accName = n
+labFirstname = <span class="accesskey">V</span>oornaam
+accFirstname = v
+labEmail = <span class="accesskey">E</span>mail
+accEmail = e
+notModifiedIfEmpty = ongewijzigd indien niet ingevuld
+editUser = Wijzig gebruikersgegevens
+addUser = Voeg een gebruiker toe
+identifiedAs = U bent geregistreerd als
+labAllowOther = Gee<span class="accesskey">f</span> andere gebruikers toegang tot mijn rapporten
+accAllowOther = f
+labLanguage = <span class="accesskey">T</span>aal
+accLanguage = t
+labTemplate = <span class="accesskey">S</span>jabloon
+accTemplate = s
+labUseShare = <span class="accesskey">G</span>ebruik gedeelde projecten en activiteiten
+accUseShare = g
+sendTo = Zenden aan
+
+[report]
+timeInterval = Tijd interval
+labDatStart = <span class="accesskey">S</span>tart
+accDatStart = s
+labDatEnd = <span class="accesskey">E</span>inde
+accDatEnd = e
+reportType = Groeperen
+sort = Sorteren
+accAlpha = b
+labAlpha = Alpha<span class="accesskey">b</span>etisch
+accTime = u
+labTime = D<span class="accesskey">u</span>ur
+user = User
+labFor = <span class="accesskey">V</span>oor
+accFor = v
+labDetail = <span class="accesskey">D</span>etails
+accDetail = d
+currentWeek = Deze week
+previousWeek = Vorige week
+currentMonth = Deze maand
+previousMonth = Vorige maand
+currentYear = Dit jaar
+previousYear = Vorig jaar
+choseDate = Kies een datum
+
+duration = Duur
+from = van
+to = tot
+seeEvents = Bekijk werkzaamheden
+For = Voor
+excelDownload = Exporteer naar spreadsheet
+
+[search]
+result = resultaat voor
+results = resultaten voor
+
+[tool]
+move = Verplaats activiteiten
+from = Van
+to = naar
+
+[gantt]
+aPrevGantt = Vorige datum
+aNextGantt = Volgende datum
+selSpan = Tijdspanne (maand)

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-style-type" content="text/css" />
+<meta http-equiv="Content-language" content="en" />
+<meta name="revisit-after" content="7 days" />
+<meta name="description" content="Sillaj is a PHP time tracking tool. It allows to register time on projects and tasks and create various reports. Sillaj is multiuser and multilanguage, uses a database backend (MySQL or other through a database abstraction layer) and is themable through Smarty templates." />
+<meta name="keywords" content="sillaj,time,tracking,tracker,projects,tasks,reports" />
+<meta name="author" content="Michaël Delorme" />
+<meta name="robots" content="index,follow" />
+<meta name="generator" content="Sillaj" />
+<meta name="DC.Language" content="fr" scheme="RFC1766" />
+<meta name="DC.Identifier" content="Sillaj-2" />
+<meta name="DC.Publisher" content="sillaj@gmail.com" />
+<meta name="DC.Creator" content="sillaj@gmail.com" />
+<meta name="DC.Date.created" content="2005-10-26" scheme="W3CDTF" />
+<meta name="DC.Date.modified" content="2005-10-26" scheme="W3CDTF" />
+<meta name="DC.Date.issued" content="2005-10-26" scheme="W3CDTF" />
+<title>Sillaj - FAQ</title>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="shortcut icon" type="image/x-icon" href="demo/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../templates/default/styles/default.css" media="all" title="Sillaj" />
+<link rel="stylesheet" type="text/css" href="../templates/default/styles/print.css" media="print" />
+</head>
+<body>
+<h1><img src="../templates/default/img/logo_sillaj.png" alt="" /><a href="/">FAQ Sillaj</a></h1>
+<dl>
+<dt>"DB: Syntax error" when I request a report</dt>
+<dd>You are probably running an old version of MySQL server, which does not 
+support the CAST... AS CHAR(8) syntax. You should upgrade your MySQL server 
+or edit Report::getProject() and Report::getTask() in inc/sillaj.class.php 
+(however you'll have date formatting issues)</dd>
+<dt>I get a blank page</dt>
+<dd>Generally it's because the PEAR components are not available.
+See in <a href="install.html">install.html</a> :
+<ul>
+<li>Make sure you have a PEAR directory in your PHP directory and check
+that this PEAR directory is declared in the include_dir directive of
+php.ini. <i>e.g.</i> :<br />
+<code>include_path = ".;c:\php\includes;c:\php\pear;"</code>
+</li>
+<li>copy the content of sillaj/lib/pear/ in your PEAR directory if necessary</li>
+</ul>
+</dd>
+<dt></dt>
+<dd></dd>
+<dt></dt>
+<dd></dd>
+</dl>
+</body>
+</html>

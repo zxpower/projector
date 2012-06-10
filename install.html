@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-style-type" content="text/css" />
+<meta http-equiv="Content-language" content="en" />
+<meta name="revisit-after" content="7 days" />
+<meta name="description" content="Sillaj is a PHP time tracking tool. It allows to register time on projects and tasks and create various reports. Sillaj is multiuser and multilanguage, uses a database backend (MySQL or other through a database abstraction layer) and is themable through Smarty templates." />
+<meta name="keywords" content="sillaj,time,tracking,tracker,projects,tasks,reports" />
+<meta name="author" content="Michaël Delorme" />
+<meta name="robots" content="index,follow" />
+<meta name="generator" content="Sillaj" />
+<meta name="DC.Language" content="fr" scheme="RFC1766" />
+<meta name="DC.Identifier" content="Sillaj-2" />
+<meta name="DC.Publisher" content="sillaj@gmail.com" />
+<meta name="DC.Creator" content="sillaj@gmail.com" />
+<meta name="DC.Date.created" content="2005-10-26" scheme="W3CDTF" />
+<meta name="DC.Date.modified" content="2005-10-26" scheme="W3CDTF" />
+<meta name="DC.Date.issued" content="2005-10-26" scheme="W3CDTF" />
+<title>Sillaj - install and features</title>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="templates/default/styles/default.css" media="all" title="Sillaj" />
+<link rel="stylesheet" type="text/css" href="templates/default/styles/print.css" media="print" />
+</head>
+<body>
+<h1><img src="templates/default/img/logo_sillaj.png" alt="" /><a href="/">Sillaj</a></h1>
+<p>Sillaj is a PHP time tracking tool. It allows to register time on projects and 
+tasks and create various reports and Gantt graphs. Sillaj is multiuser and multilanguage, uses 
+a database backend and is themable through templates.</p>
+
+<p>Sillaj makes extensive use of the following libraries (thanks to the authors !) :</p>
+<ul>
+  <li><a href="http://pear.php.net/">PEAR</a></li>
+  <li><a href="http://smarty.php.net/">Smarty</a></li>
+  <li><a href="http://phpmailer.sourceforge.net/">PHPMailer</a></li>
+  <li><a href="http://www.aditus.nu/jpgraph/">JpGraph</a></li>
+  <li><a href="http://www.javascripttoolbox.com/lib/calendar/">Calendar Popup</a></li>
+</ul>
+<p>Sillaj is distributed under the <a href="http://www.gnu.org/copyleft/gpl.html">GPL</a>.
+</p>
+
+<p>Sillaj can be downloaded from <a href="http://sillaj.sourceforge.net/">http://sillaj.sourceforge.net/</a></p>
+
+<p>Created by Michaël Delorme - <a href="mailto:sillaj@gmail.com">sillaj@gmail.com</a><br />
+Thanks to janson.peter/@gmail.com for the swedish translation, to 
+lmoehri/@gwdg.de for the german translation and bert.fransen/@sygma.nl for the dutch translation</p>
+
+<p>See <a href="changes.txt">changes.txt</a> for version notes.</p>
+
+
+<h2>Required</h2>
+
+<ul>
+  <li>Webserver - <i>e.g.</i> <a href="http://httpd.apache.org/">Apache</a></li>
+  <li><a href="http://www.php.net/">PHP</a> 4.x or 5.x</li>
+  <li><a href="http://pear.php.net/">PEAR</a> (core), PEAR::DB and PEAR::Calendar (included)</li>
+  <li>Any database (?) - Tested with <a href="http://www.mysql.com/">MySQL</a> 4.1+ or 5.x</li>
+  
+  <li>Browser : Gecko-based (Firefox 1+), Opera 8+ or Internet Explorer 5+<br />
+  -> use of xmlHttpRequest()</li>
+</ul>
+
+<h2>Installation</h2>
+
+<ol>
+  <li>Copy the sillaj directory somewhere below your web root directory</li>
+  
+  <li>Make sure you have a PEAR directory in your PHP directory and check that 
+    this PEAR directory is declared in the include_dir directive of php.ini).
+    <i>e.g.</i> :<br />
+    <pre>include_path = ".;c:\php\includes;c:\php\pear;"</pre>
+  </li>  
+  <li>copy the content of /lib/pear/ in your PEAR directory if necessary</li>
+  <li>create the database
+  <pre>$ mysqladmin -u root -p create sillaj</pre>
+  </li>
+  <li>use the SQL script (in /sql/) to create the tables
+  <pre>$ mysql -u root -p sillaj &lt; sql/mysql.sql</pre>
+  </li>
+  <li>create a database user (who must have the rights to create temporary tables)
+  <pre>$ mysql -u root -p sillaj
+$mysql> GRANT ALL ON sillaj.* to 'sillaj'@'localhost' IDENTIFIED BY 'sillaj';</pre>
+  </li>
+  <li>Modify /inc/config.php 
+    <ul>
+      <li>Connection parameters according to your database settings</li>
+      <li>Chose your default language (french, swedish, german, dutch or english) and date formats</li>
+      <li>If you want gantt graphs, set BOO_ENABLE_GRAPH_SILLAJ to true and enable GD (in your php.ini : uncomment <code>extension=php_gd2.dll</code> or <code>gd.so</code>)</li>
+    </ul>
+  </li>
+  <li>check that the webserver can write in /templates/*/templates_c and in /cache/<br />
+    ex : 
+  <pre>$ chmod 777 templates/default/templates_c
+$ chmod 777 cache</pre>
+  </li>
+  <li>Check that PHP sessions are enabled in php.ini (see PHP manual)</li>  
+  <li>You can add a <a href="http://eaccelerator.net/">PHP accelerator</a></li>
+  <li>Go to http://server/sillaj/ ; you should get the login page, click on 
+    "Create an account", fill-in the required informations and start using Sillaj
+   </li>
+</ol>
+
+<h2>It doesn't work !</h2>
+<p>See the <a href="doc/faq.html">Frequently Asked Questions</a> or <a href="https://sourceforge.net/forum/forum.php?forum_id=461863" title="On sourceforge">the forum</a>.</p>
+
+<h2>Features</h2>
+<ul>
+  <li><strong>Multiuser</strong> ; each user has its own projects/tasks. Users can see other people's reports (if allowed on site-wide basis <em>and</em> if the users allowed)<br />
+    People can share their tasks and projects, so a team can use the same parameters and build
+    complete and accurate time reports.</li>
+  <li>Reports by project or task. Full events listing for a project or a task.</li>
+  <li>Gantt charts for projects and tasks</li>
+  <li>Can hide some projects or tasks in reports (ex : vacations)</li>
+  <li>XHTML 1.0 compliant + CSS3. Accessibility checked.</li>
+  <li>Templates driven. Create easily your templates with Smarty tags (or just a CSS) !</li>
+  <li><strong>Multilanguage capable</strong> (english by default ; dutch, french, german and swedish translations available). Dates are localized too.</li>
+  <li>Atom and RSS feeds available for any user</li>
+  <li>Optimized PHP code (and Smarty cache where applicable). OOP.</li>
+  <li>Can export reports to a spreadsheet</li>
+  <li>Allow specific tasks for a project. Only these tasks are shown when inputting an event<br />
+  (xmlhttprequest)</li>
+  <li>Search engine (Opensearch compatibility)</li>
+  <li>Password reminder</li>
+  <li>Automatic duration calculation if only start and end time are input</li>
+  <li>Time can be entered as hh-mm-ss hh:mm:ss hh,mm,ss hh;mm;ss or "hh mm ss" (with or without seconds)</li>
+  <li>Passwords stored encrypted in the database. Password not send in clear text (nonce based authentication)</li>
+  <li>You can use Sillaj as a backend for an OSX widget thanks to Johan Ström.
+    See <a href="http://trac.stromnet.se/misc/wiki/Sillaj-Widget">Sillaj-Widget</a>
+  </li>
+  <li>Free, libre</li>
+</ul>
+
+<h2>Adding translation</h2>
+
+<ul>
+  <li>Add a directory in /lang/ (according to <a href="http://www.loc.gov/standards/iso639-2/langhome.html">ISO 639-1</a>)</li>
+  <li>Copy lang.php, lang.txt and lang.js from any other language directory</li>
+  <li>Translate</li>
+  <li>add in config.php in the array $arrLanguageNameLookup</li>
+  <p><a href="mailto:sillaj@gmail.com?subject=New+language">Mail</a> your files so I can add them to the source files</p>
+</ul>
+
+<h2>Adding templates</h2>
+
+<p>Copy the /templates/defaults directory to /templates/my_new_templates dir and modify as
+you like...</p>
+<p><a href="mailto:sillaj@gmail.com?subject=New+template">Mail</a> your files so I can add them to the source files</p>
+
+<h2>Adding themes to a template</h2>
+
+<p>Just add a new css file in /templates/*/styles/<br />
+You must then use a browser that allows you to switch stylesheets to take full advantage of this feature</p>
+<p>Note that default.css, print.css and calendar.css are mandatory.</p>
+<p><a href="mailto:sillaj@gmail.com?subject=New+theme">Mail</a> your files so I can add them to the source files</p>
+
+<h2>Miscellanous</h2>
+<p>Check the /doc/ directory for more information on the API</p>
+
+
+</body>
+</html>

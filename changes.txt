@@ -1,0 +1,295 @@
+﻿0.2.18 - 2010-04-09 rev. 41
+===========================
+- Corrected bug in sum of report
+
+0.2.17 - 2008-10-03 rev. 30
+===========================
+- Add X-Powered-By
+- Add a name to the session
+- Code cleaning & small fixes (incl. days names for JSCal)
+- Added Opensearch functionality
+
+0.2.16 - 2007-11-13 rev. 23
+===========================
+- code cleaning
+- fixed bug [ 1831290 ] problem when creating a new user
+- enhance login
+
+0.2.15 - 2007-09-18 rev. 20
+===========================
+- Added dutch (nl) language (bert.fransen @ sygma.nl)
+- Fixed bug on date check
+
+0.2.14 - 2007-09-11 rev. 17
+===========================
+- Implementation of nonce-based authentication : no password is sent in clear text
+- Added prev/next in gantt head
+- Added names in HTML templates
+- JS message for trans-day event
+- Added documentation
+- Corrected bug in js validation (add 0 before h:mm)
+- Added trans-day event
+- Added Atom 1.0 feed
+- Some code cleaning (charset)
+- Use Subversion
+
+0.2.13 - 2007-04-26
+===================
+- Usability fixes by Johan Ström see http://sourceforge.net/tracker/index.php?func=detail&aid=1706167&group_id=130610&atid=721540
+  (remember last project/task) on input
+- Added files to work as a backend for an OSX Widget by Johan Ström
+  see http://trac.stromnet.se/misc/wiki/Sillaj-Widget
+- Added a short FAQ
+
+0.2.12 - 2007-04-15
+===================
+- !!! Database schema changed to use a gantt cache : please use sql/mysql_0211_0212.sql to upgrade
+- fix problem with jpgraph and PHP 5.2 : DEFINE("CATCH_PHPERRMSG",false);
+- use a cache for gantt graph
+- upgraded PEAR::DB
+
+0.2.11 - 2007-01-14
+===================
+- Better regexp for email validation
+- Added remarks in reports
+- removed label attribute in HTML options for smaller page
+- Added German translation (thanks lmoehri @ gwdg.de)
+- Escape some HTML (rss.tpl, index.tpl)
+
+0.2.10 - 2006-11-08
+===================
+- Code cleaning
+- Correcting bug [ 1536845 ] defective button behaviour in IE. Thanks to Koen
+
+0.2.9 - 2006-08-14
+==================
+- Escape user submitted HTML to prevent some XSS.
+
+0.2.8 - 2006-08-08
+==================
+- fixed language and date format in HTML head
+- fixed prev/next in HTML header
+- fixed bad constant name STR_MAIL_SMTP_AUTHENT_SILLAJ in mail.php
+- Added fullname prev/next days in tooltips in index.php
+- Added IE7 hacks http://dean.edwards.name/ to try to correct button behaviour in IE (ineffective, removed later)
+
+0.2.7 - 2006-02-05
+==================
+- Fixed incorrect locale (for sv) in gantt.php
+- Added autosubmit form for gantt
+- Fixed date_format_w3cdtf()
+- Added locale unification and put definitions in translation files (eg : fr and fr_FR)
+- Added fullname of languages (in config.php) for display in user.tpl
+- Added link to gantt in event.tpl
+- Check for BOO_ENABLE_GRAPH_SILLAJ in all gantt links
+- Fixed sort order in Project::getEvent() and Task::getEvent()
+- Fixed invalid date for RSS in Event::getRss() when there is no start time
+- Checked XHTML conformance
+- Updated documentation
+- renamed translation files
+- renamed sillaj/lib/phpmailer/language/phpmailer.lang-se.php to phpmailer.lang-sv.php
+
+0.2.6 - 2006-01-18
+==================
+- Gantt navigation (caching not implemented and you should manually and periodically delete the graphs in /cache/)
+- Swedish translation (thanks janson.peter at gmail.com)
+- Test OS name for the right locale string
+
+0.2.5a - 2006-01-09
+===================
+- Fixed bug in getGantt()
+- Added date management in gantt.php
+
+0.2.5 - 2006-01-08
+==================
+- Added start time in RSS
+- Added number of events in link title in the calendar
+- Changed CSS to print the footer
+- Fixed the menu (misplaced " in the template)
+- Added Gantt chart with Jpgraph : gd must be enabled in your php.ini
+- Change report form layout for future use
+- Use require instead of require_once
+- Modified page title in project and task edit forms
+
+0.2.4 - 2005-11-16
+==================
+- Improved time check : a single digit start time doesn't trigger a javascript error when end time is > 10
+- bug in report.php : user list didn't update because the page was cached
+- corrected dc:language in rss.tpl (thanks d-Media)
+- corrected date format in rss.tpl and changed query in Event::getRss() (thanks d-Media)
+- changed dc:publisher and dc:creator in rss.tpl
+
+0.2.3 - 2005-10-26
+==================
+- Added long date format preference
+- Added javascript date picker for report, whith date formatting
+- CSS modified for better calendar view
+- Fixed bug : when requesting a mail with a new password, if the mail fails sending, the password was reset anyway.
+
+0.2.2 - 2005-09-24
+==================
+
+!!! Database schema changed : please use sql/mysql_021_022.sql to update your database
+if you have sillaj 0.2.1 (or older) installed :
+/sql$ mysql -u root -p sillaj < mysql_021_022.sql.sql
+
+- Upgraded Smarty from 2.6.6 to 2.6.10
+- Added the possibility to hide some projects/tasks in reports (e.g. vacation)
+
+0.2.1 - 2005-06-18
+==================
+
+- Code optimization, more input checks
+- Fixed bug in Task::add() : missing field
+- Fixed bug in DDAF plugin
+- Fixed sort order in Report::getProject() and Report::getTask()
+
+0.2.0 - 2005-04-14
+==================
+
+- Added shared project and tasks
+- Added password reminder by email with PHPMailer
+- Added tools (batch move events to others projects/tasks) -- not complete
+
+0.1.3 - Not released
+====================
+
+- When editing an event, display only the relevant tasks in the dropdown list
+- Added caching for login, RSS and report (form). Cache lifetime : 1h
+- incorrect <label for> in tabEvent.tpl
+
+0.1.2 - 2005-04-18
+==================
+
+- Switched submit <input> with submit <button>
+- Fixed sort bug in reports (need to sort before formatting time)
+- Use CAST ... CHAR(8) again in MySQL (for display -> Need MysqL 4.1+)
+
+0.1.1 - 2005-04-08
+==================
+
+- Fixed missing variable in frmReport.tpl
+- fixed date in class Report
+- Added export to Excel in reports
+
+0.1.0 - 2005-04-05
+==================
+
+- Added local date format choice in config.php
+
+0.0.13 - 2005-04-01
+===================
+
+- Return to default template if current user template doesn't exist anymore
+- Adding alternate CSS
+- Added API documentation with phpdoc
+- Friendlier javascript message when deleting an event
+
+0.0.12 - Not released
+=====================
+
+- Minor bug fixes
+
+0.0.11 - 2005-03-22
+===================
+
+- Added ob_start('ob_gzhandler') to compress pages and speed up transfers
+- Fixed links in project.tpl
+- Added dates pre-loading (javascript) in frmReports.tpl
+
+0.0.10 - 2005-03-21
+===================
+
+- Changed sort order in Event::getForDay and Report::getTask and Report::getTask
+- Disable pconnect
+- Added access restriction on other users projects and task events
+
+0.0.9 - 2005-03-16
+==================
+
+- Use @@identity in database query (Project::add & Task::add)
+- Titles in meta next and prev
+- Fixed change javascript language on user update
+- Added 'LIMIT 1' in Event::get to speed up query
+- Modified search box
+- Added border-radius in default CSS
+- More conspicuous event link in edit_project.tpl and edit_task.tpl
+- Switch frmEvents to GET in index.tpl
+- Added javascript for search form
+
+0.0.8 - 2005-03-10
+==================
+
+- Added start in <head>
+- Added title in navigation meta
+- Added link from project to event
+- Report accessible via GET request
+- User : added preferences (language, template, allow/deny other to see his reports)
+- Added <noscript>
+- Added search engine
+- modified index.tpl, event.tpl and search.tpl to share tabEvent.tpl
+
+0.0.7 - 2005-03-10
+==================
+
+- Minor style modif
+
+0.0.6 - 2005-03-09
+==================
+
+- Added sum for project or task in event.php
+- Added type (project or task) in event.php
+- Style modif
+- Added possibility to display/hide details in reports both server-side and client-side
+- Added next/prev in <head>
+
+
+0.0.5 - 2005-03-09
+==================
+
+- Modified Report::getSumWorked, Report::getProject and Report::getTask to use the selected user (and not the current one)
+- Default to order by duration for report
+- Style modif
+- Numbered report
+- Order in event list (index.php)
+
+0.0.4 - 2005-03-07
+==================
+
+- CAST modified in Report::getProject and Report::getTask to be backward compatible with MySQL 4.0.6+
+- Added rem in event list (index.php)
+- Added compliance logos (XHTML...)
+- Author in meta tags
+- SF link
+- Allow to see other users reports
+- Access to editing from RSS
+- Sort order of events (index.php)
+
+0.0.3 - 2005-03-06
+==================
+
+- Fixed truncated time if > 100h in reports
+- More input checks (time)
+- Added RSS feed
+
+
+0.0.2 - 2005-03-05
+==================
+
+- Added sort by duration for reports
+- English translation
+
+
+0.0.1 - 2005-02-16
+==================
+
+- First release
+- Manage user, event, project, task
+- Basic reporting
+- Themable
+- Multi language support
+- XHTML 1.1, CSS 3
+- Dynamic task selection according to the project selected (xmlhttprequest)
+- Use PEAR::Calendar, PEAR::DB - http://pear.php.net/
+- Use Smarty template engine - http://smarty.php.net/
+- Lack full input checks

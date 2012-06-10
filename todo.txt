@@ -1,0 +1,7 @@
+- New themes
+- New translations
+- More input checks
+- Fulltext search ?
+- migrate events from one task to another (or delete) if a project doesn't link to the task anymore
+- Export to iCal
+- group by user in reports
