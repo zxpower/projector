@@ -1,5 +1,7 @@
 <?php
 
 	define('SA_BASE', '/sa/');
+	
+	$db_data = array('server','user','pass','dbname');
 
 ?>

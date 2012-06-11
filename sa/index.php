@@ -14,6 +14,8 @@
 		SA_BASE.'login' => 'login'
 	);
 
+	require_once 'edb-class/edb.class.php';
+
 	require_once 'Twig/Autoloader.php';
 	Twig_Autoloader::register();
 	
