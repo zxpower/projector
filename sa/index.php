@@ -16,6 +16,9 @@
 
 	require_once 'edb-class/edb.class.php';
 
+	global $db;
+	$db = new edb($db_data);
+
 	require_once 'Twig/Autoloader.php';
 	Twig_Autoloader::register();
 	
