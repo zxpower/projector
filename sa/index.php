@@ -7,19 +7,19 @@
 		exit();
 	}
 	
-	require_once 'gluephp/glue.php';
+	require_once 'lib/gluephp/glue.php';
 	
 	$urls = array(
 		SA_BASE => 'index',
 		SA_BASE.'login' => 'login'
 	);
 
-	require_once 'edb-class/edb.class.php';
+	require_once 'lib/edb-class/edb.class.php';
 
 	global $db;
 	$db = new edb($db_data);
 
-	require_once 'Twig/Autoloader.php';
+	require_once 'lib/Twig/Autoloader.php';
 	Twig_Autoloader::register();
 	
 	global $twig;
