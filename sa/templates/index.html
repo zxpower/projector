@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}User Admin{% endblock %}
-{% block head %}
-    {{ parent() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
+{% block menu %}
+	<div id="menu">
+		<ul>
+			<li><a href="{{ installpath }}">Users</a></li>
+			<li><a href="{{ installpath }}projects/">Projects</a></li>
+			<li><a href="{{ installpath }}tasks/">Tasks</a></li>
+			<li><a href="{{ installpath }}logout/">Logout</a></li>
+		</ul>
+	</div>
 {% endblock %}
 {% block content %}
-    <h1>List of Users</h1>
     <p class="important">
         Welcome on my awesome homepage.
     </p>

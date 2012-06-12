@@ -12,7 +12,10 @@
 	
 	$urls = array(
 		SA_BASE => 'index',
-		SA_BASE.'login' => 'login'
+		SA_BASE.'login' => 'login',
+		SA_BASE.'logout' => 'logout',
+		SA_BASE.'projects' => 'index',
+		SA_BASE.'tasks' => 'index'
 	);
 
 	require_once 'lib/edb-class/edb.class.php';
@@ -100,16 +103,24 @@
 				header('Location: '.SA_BASE.'login/');
 				exit();
 			}
-			$line = $_SESSION['db']->line("select * from sillaj_user where strUserId = '".$username."' and strPassword = '".$password."'");
+			$line = $_SESSION['db']->line("select * from sillaj_user where strUserId = '".$username."' and strPassword = '".$password."' and booAdmin = '1'");
 			if(!empty($line)) {
 				$_SESSION['is_logged_in'] = true;
 				header('Location: '.SA_BASE);
 				exit();
 			} else {
-				$_SESSION['errormsg'] = 'Username/password does not match!';
+				$_SESSION['errormsg'] = 'Username/password does not match or you are not an administrator!';
 				header('Location: '.SA_BASE.'login/');
 				exit();
 			}
+		}
+	}
+	
+	class logout {
+		function GET() {
+			$_SESSION['is_logged_in'] = false;
+			header('Location: '.SA_BASE.'login/');
+			exit();
 		}
 	}
 
