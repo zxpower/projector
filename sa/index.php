@@ -12,6 +12,8 @@
 	
 	$urls = array(
 		SA_BASE => 'index',
+		SA_BASE.'add' => 'addUser',
+		SA_BASE.'edit/[a-zA-Z0-9]+' => 'editUser',
 		SA_BASE.'login' => 'login',
 		SA_BASE.'logout' => 'logout',
 		SA_BASE.'projects' => 'index',
@@ -33,7 +35,6 @@
 	if(!isset($_SESSION['is_logged_in'])) {
 		$_SESSION['is_logged_in'] = false;
 	}
-	//$_SESSION['is_logged_in'] = false;
 	
 	if(!isset($_SESSION['errormsg'])) {
 		$_SESSION['errormsg'] = '';
@@ -53,15 +54,70 @@
 	    return $input; 
 	}
 
+	function debugVar($var) {
+		echo "<pre>";
+		print_r($var);
+		echo "</pre>";
+	}
+
 	class index {
 		function GET() {
 			if($_SESSION['is_logged_in']) {
+				$allUsers = $_SESSION['db']->selectAll('sillaj_user');
+				//debugVar($allUsers);
 				$options = array(
 					'installpath' => SA_BASE,
 					'pageheader' => 'User manager',
-					'menu' => true
+					'menu' => true,
+					'allusers' => $allUsers
 				);
 				echo $_SESSION['twig']->render('index.html', $options);
+			} else {
+				header('Location: '.SA_BASE.'login/');
+				exit();
+			}
+		}
+	}
+	
+	class addUser {
+		function GET() {
+			if($_SESSION['is_logged_in']) {
+				header('Location: '.SA_BASE);
+				exit();
+			} else {
+				header('Location: '.SA_BASE.'login/');
+				exit();
+			}
+		}
+		function POST() {
+			if($_SESSION['is_logged_in']) {
+				header('Location: '.SA_BASE);
+				exit();
+			} else {
+				header('Location: '.SA_BASE.'login/');
+				exit();
+			}
+		}
+	}
+	
+	class editUser {
+		function GET($variables) {
+			if($_SESSION['is_logged_in']) {
+				$variables = preg_split('/\//',$variables[0],-1,PREG_SPLIT_NO_EMPTY);
+				$userId = end($variables);
+				debugVar($userId);
+				echo '<a href="'.SA_BASE.'">Back</a>';
+				/*header('Location: '.SA_BASE);
+				exit();*/
+			} else {
+				header('Location: '.SA_BASE.'login/');
+				exit();
+			}
+		}
+		function POST() {
+			if($_SESSION['is_logged_in']) {
+				header('Location: '.SA_BASE);
+				exit();
 			} else {
 				header('Location: '.SA_BASE.'login/');
 				exit();

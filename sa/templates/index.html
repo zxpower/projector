@@ -1,8 +1,36 @@
 {% extends "base.html" %}
 
 {% block title %}User Admin{% endblock %}
+{% block submenu1 %}
+	<ul>
+		<li><a href="{{ installpath }}add/">Add user</a></li>
+	</ul>
+{% endblock %}
 {% block content %}
-    <p class="important">
-        Welcome on my awesome homepage.
-    </p>
+	{% if allusers|length > 0 %}
+    	<table>
+			<tr>
+				<th>Username</th>
+				<th>Firstname</th>
+				<th>Surname</th>
+				<th>E-mail</th>
+				<th>Active?</th>
+				<th>Admin?</th>
+			</tr>
+        	{% for user in allusers %}
+            	<tr>
+					<td><a href="{{ installpath }}edit/{{ user.strUserId|e }}">{{ user.strUserId|e }}</a></td>
+					<td>{{ user.strName|e }}</td>
+					<td>{{ user.strFirstname|e }}</td>
+					<td>{{ user.strEmail|e }}</td>
+					<td class="center">{% if user.booActive == 1 %}<img src="{{ installpath }}img/checkmark-10.gif" alt="OK" />{% else %}&nbsp;{% endif %}</td>
+					<td class="center">{% if user.booAdmin == 1 %}<img src="{{ installpath }}img/checkmark-10.gif" alt="OK" />{% else %}&nbsp;{% endif %}</td>
+				</tr>
+        	{% endfor %}
+    	</table>
+	{% else %}
+		<p class="important">
+			No users found in system!
+		</p>
+	{% endif %}
 {% endblock %}
