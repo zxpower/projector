@@ -11,8 +11,17 @@
 			<h1 style="color: green;"><a href="{{ installpath }}">Projector</a></h1>
 			<h2>{{ pageheader }}</h2>
 		</div>
-		{% block menu %}{% endblock %}
 		<hr />
+		{% if menu == true %}
+			<div id="menu">
+				<ul>
+					<li><a href="{{ installpath }}">Users</a></li>
+					<li><a href="{{ installpath }}projects/">Projects</a></li>
+					<li><a href="{{ installpath }}tasks/">Tasks</a></li>
+					<li><a href="{{ installpath }}logout/">Logout</a></li>
+				</ul>
+			</div>
+		{% endif %}
         <div id="content">{% block content %}{% endblock %}</div>
 		<hr />
         <div id="footer">

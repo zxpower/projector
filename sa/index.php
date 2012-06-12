@@ -56,7 +56,12 @@
 	class index {
 		function GET() {
 			if($_SESSION['is_logged_in']) {
-				echo $_SESSION['twig']->render('index.html', array('name' => 'Tests', 'installpath' => SA_BASE, 'pageheader' => 'User manager'));
+				$options = array(
+					'installpath' => SA_BASE,
+					'pageheader' => 'User manager',
+					'menu' => true
+				);
+				echo $_SESSION['twig']->render('index.html', $options);
 			} else {
 				header('Location: '.SA_BASE.'login/');
 				exit();
@@ -72,17 +77,17 @@
 			} else {
 				if(!empty($_SESSION['errormsg'])) {
 					$options = array(
-						'name' => 'Users',
 						'installpath' => SA_BASE,
 						'pageheader' => 'Login to system',
+						'menu' => false,
 						'errormsg' => $_SESSION['errormsg']
 					);
 					$_SESSION['errormsg'] = '';
 				} else {
 					$options = array(
-						'name' => 'Users',
 						'installpath' => SA_BASE,
-						'pageheader' => 'Login to system'
+						'pageheader' => 'Login to system',
+						'menu' => false
 					);
 				}
 				echo $_SESSION['twig']->render('login.html', $options);
