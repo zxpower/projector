@@ -105,10 +105,14 @@
 			if($_SESSION['is_logged_in']) {
 				$variables = preg_split('/\//',$variables[0],-1,PREG_SPLIT_NO_EMPTY);
 				$userId = end($variables);
-				debugVar($userId);
-				echo '<a href="'.SA_BASE.'">Back</a>';
-				/*header('Location: '.SA_BASE);
-				exit();*/
+				$options = array(
+					'installpath' => SA_BASE,
+					'pageheader' => 'Edit User',
+					'menu' => true,
+					'new' => false,
+					'userId' => $userId
+				);
+				echo $_SESSION['twig']->render('addedit.html', $options);
 			} else {
 				header('Location: '.SA_BASE.'login/');
 				exit();

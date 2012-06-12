@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}{% if new == true %}Add{% else %}Edit{% endif %}User{% endblock %}
+{% block submenu1 %}
+	<ul>
+		<li><a href="{{ installpath }}add/">Add user</a></li>
+	</ul>
+{% endblock %}
+{% block content %}
+	<p class="important">
+		UserID: {{ userId }}
+	</p>
+{% endblock %}
