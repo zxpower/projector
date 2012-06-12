@@ -118,6 +118,7 @@ CREATE TABLE `sillaj_user` (
   `booActive` set('0','1') DEFAULT '1',
   `booUseShare` set('0','1') DEFAULT '0',
   `booAllowOther` set('0','1') DEFAULT '0',
+  `booAdmin` set('0','1') DEFAULT '0',
   `strLanguage` char(2) DEFAULT NULL,
   `strTemplate` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`strUserId`)
@@ -130,7 +131,7 @@ CREATE TABLE `sillaj_user` (
 
 LOCK TABLES `sillaj_user` WRITE;
 /*!40000 ALTER TABLE `sillaj_user` DISABLE KEYS */;
-INSERT INTO `sillaj_user` VALUES ('admin','Super','Admin','contact@digiblink.eu','fe01ce2a7fbac8fafaed7c982a04e229','1','1','0','en','default');
+INSERT INTO `sillaj_user` VALUES ('admin','Super','Admin','contact@digiblink.eu','fe01ce2a7fbac8fafaed7c982a04e229','1','1','0','1','en','default');
 /*!40000 ALTER TABLE `sillaj_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -2,15 +2,21 @@
 <html>
     <head>
         {% block head %}
-            <link rel="stylesheet" href="style.css" />
-            <title>{% block title %}{% endblock %}</title>
+            <link rel="stylesheet" href="{{ installpath }}style.css" />
+            <title>{{ pageheader }} - Projector</title>
         {% endblock %}
     </head>
     <body>
+		<div id="header">
+			<h1 style="color: green;"><a href="{{ installpath }}">Projector</a></h1>
+			<h2>{{ pageheader }}</h2>
+		</div>
+		<hr />
         <div id="content">{% block content %}{% endblock %}</div>
+		<hr />
         <div id="footer">
             {% block footer %}
-                &copy; 2012 by <a href="http://digiblink.eu/">digiBlink</a>.
+                <a href="http://projector.lv/">Projector</a> is created by <a href="http://digiblink.eu/">digiBlink</a>.
             {% endblock %}
         </div>
     </body>

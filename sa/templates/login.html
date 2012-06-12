@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %}Login{% endblock %}
-{% block head %}
-    {{ parent() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
-{% endblock %}
 {% block content %}
-    <h1>Login</h1>
-    <p class="important">
-        Welcome on my awesome homepage. {{ name }}
-    </p>
+	<div id="loginwindow">
+		<div class="message">{{ errormsg }}</div>
+		
+		<form action="{{ installpath }}login/" method="post" accept-charset="utf-8">
+			<p>
+				<label for="email">Username:</label><br />
+				<input type="text" name="username" value=""  />
+			</p>
+			<p>
+				<label for="password">Password:</label><br />
+				<input type="password" name="password" value=""  />
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Login!"  />
+			</p>
+		</form>
+	</div>
 {% endblock %}
