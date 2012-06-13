@@ -67,7 +67,7 @@
 				//debugVar($allUsers);
 				$options = array(
 					'installpath' => SA_BASE,
-					'pageheader' => 'User manager',
+					'pageheader' => 'User Manager',
 					'menu' => true,
 					'allusers' => $allUsers
 				);
@@ -105,12 +105,21 @@
 			if($_SESSION['is_logged_in']) {
 				$variables = preg_split('/\//',$variables[0],-1,PREG_SPLIT_NO_EMPTY);
 				$userId = end($variables);
+				$userData = $_SESSION['db']->line("select * from sillaj_user where strUserId = '".$userId."'");
+				if(!empty($userData)) {
+					$headerText = 'Edit';
+					$newStatus = false;
+				} else {
+					$headerText = 'Add';
+					$newStatus = true;
+				}
 				$options = array(
 					'installpath' => SA_BASE,
-					'pageheader' => 'Edit User',
+					'pageheader' => $headerText.' User',
 					'menu' => true,
-					'new' => false,
-					'userId' => $userId
+					'new' => $newStatus,
+					'userId' => $userId,
+					'userData' => $userData
 				);
 				echo $_SESSION['twig']->render('addedit.html', $options);
 			} else {
@@ -120,8 +129,10 @@
 		}
 		function POST() {
 			if($_SESSION['is_logged_in']) {
-				header('Location: '.SA_BASE);
-				exit();
+				debugVar($_POST);
+				echo '<a href="'.SA_BASE.'">Back</a>';
+				//header('Location: '.SA_BASE);
+				//exit();
 			} else {
 				header('Location: '.SA_BASE.'login/');
 				exit();
