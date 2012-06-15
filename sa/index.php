@@ -121,6 +121,7 @@
 		}
 		function POST() {
 			if($_SESSION['is_logged_in']) {
+				
 				debugVar($_POST);
 				echo '<a href="'.SA_BASE.'">Back</a>';
 				//header('Location: '.SA_BASE);

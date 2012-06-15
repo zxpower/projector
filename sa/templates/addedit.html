@@ -3,6 +3,7 @@
 {% block head %}
 	{{ parent() }}
 	
+	<script type="text/javascript" src="{{ installpath }}../lang/en/lang.js"></script>
 	<script type="text/javascript" src="{{ installpath }}../scripts/sillaj.js"></script>
 {% endblock %}
 {% block title %}{% if new == 1 %}Add{% else %}Edit{% endif %}User{% endblock %}
@@ -15,7 +16,7 @@
 <form action="{{ installpath }}edit/{{ userId }}" id="frmUser" method="post" onsubmit="return frmUser_onsubmit(this, true);" autocomplete="off">
 <fieldset>    
 <legend>{% if new == 1 %}Add{% else %}Edit{% endif %} user information</legend>
-<input type="hidden" name="strUserId" value="{% if new == 0 %}{{ userId }}{% endif %}" />
+<input type="hidden" name="userId" value="{% if new == 0 %}{{ userId }}{% endif %}" />
 <input type="hidden" name="status" value="{% if new == 0 %}false{% else %}true{% endif %}" />
 <label for="strUserId" accesskey="l"><span class="accesskey">L</span>ogin</label><input type="text" id="strUserId" name="strUserId" {% if new == 0 %}disabled="disabled" {% endif %}value="{% if new == false %}{{ userId }}{% endif %}" /><br />     
 <label for="strName" accesskey="n"><span class="accesskey">N</span>ame</label><input type="text" id="strName" name="strName" value="{% if new == 0 %}{{ userData.strName|e }}{% endif %}" /><br />
