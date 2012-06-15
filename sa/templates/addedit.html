@@ -5,7 +5,7 @@
 	
 	<script type="text/javascript" src="{{ installpath }}../scripts/sillaj.js"></script>
 {% endblock %}
-{% block title %}{% if new == true %}Add{% else %}Edit{% endif %}User{% endblock %}
+{% block title %}{% if new == 1 %}Add{% else %}Edit{% endif %}User{% endblock %}
 {% block submenu1 %}
 	<ul>
 		<li><a href="{{ installpath }}add/">Add user</a></li>
@@ -14,16 +14,18 @@
 {% block content %}
 <form action="{{ installpath }}edit/{{ userId }}" id="frmUser" method="post" onsubmit="return frmUser_onsubmit(this, true);" autocomplete="off">
 <fieldset>    
-<legend>Edit user information</legend>
-<input type="hidden" name="strUserId" value="{{ userId }}" />
-<input type="hidden" name="status" value="{{ new }}" />
-<label for="strUserId" accesskey="l"><span class="accesskey">L</span>ogin</label><input type="text" id="strUserId" name="strUserId" {% if new == false %}disabled="disabled"{% endif %} value="{{ userId }}" /><br />     
-<label for="strName" accesskey="n"><span class="accesskey">N</span>ame</label><input type="text" id="strName" name="strName" value="" /><br />
-<label for="strFirstname" accesskey="f"><span class="accesskey">F</span>irst name</label><input type="text" id="strFirstname" name="strFirstname" value="" /><br />
+<legend>{% if new == 1 %}Add{% else %}Edit{% endif %} user information</legend>
+<input type="hidden" name="strUserId" value="{% if new == 0 %}{{ userId }}{% endif %}" />
+<input type="hidden" name="status" value="{% if new == 0 %}false{% else %}true{% endif %}" />
+<label for="strUserId" accesskey="l"><span class="accesskey">L</span>ogin</label><input type="text" id="strUserId" name="strUserId" {% if new == 0 %}disabled="disabled" {% endif %}value="{% if new == false %}{{ userId }}{% endif %}" /><br />     
+<label for="strName" accesskey="n"><span class="accesskey">N</span>ame</label><input type="text" id="strName" name="strName" value="{% if new == 0 %}{{ userData.strName|e }}{% endif %}" /><br />
+<label for="strFirstname" accesskey="f"><span class="accesskey">F</span>irst name</label><input type="text" id="strFirstname" name="strFirstname" value="{% if new == 0 %}{{ userData.strFirstname|e }}{% endif %}" /><br />
 <label for="strPassword" accesskey="p"><span class="accesskey">P</span>assword</label><input type="password" id="strPassword" name="strPassword" /> not modified if left empty<br />
-<label for="strEmail" accesskey="e" ><span class="accesskey">E</span>mail</label><input type="text" id="strEmail" name="strEmail" value="" /><br />
-<label for="cbxUseShare" accesskey="u"><input id="cbxUseShare" name="cbxUseShare" type="checkbox" checked="checked" /><span class="accesskey">U</span>se shared projects and tasks</label><br />  
-<label for="cbxAdmin" accesskey="a"><input id="cbxAdmin" name="cbxAdmin" type="checkbox" checked="checked" />Super<span class="accesskey">A</span>min?</label><br />  
+<label for="strEmail" accesskey="e" ><span class="accesskey">E</span>mail</label><input type="text" id="strEmail" name="strEmail" value="{% if new == 0 %}{{ userData.strEmail|e }}{% endif %}" /><br />
+<label for="cbxActive" accesskey="c"><input id="cbxActive" name="cbxActive" type="checkbox" {% if ( new == 0 and userData.booActive == 1 ) or new == 1 %}checked="checked"{% endif %}/>User A<span class="accesskey">c</span>tive</label><br />  
+<label for="cbxUseShare" accesskey="u"><input id="cbxUseShare" name="cbxUseShare" type="checkbox" {% if new == 0 and userData.booUseShare == 1 %}checked="checked"{% endif %}/><span class="accesskey">U</span>se shared projects and tasks</label><br />  
+<label for="cbxAllowOther" accesskey="w"><input id="cbxAllowOther" name="cbxAllowOther" type="checkbox" {% if new == 0 and userData.booAllowOther == 1 %}checked="checked"{% endif %}/>Allo<span class="accesskey">w</span> others to access user's data in reports</label><br />  
+<label for="cbxAdmin" accesskey="a"><input id="cbxAdmin" name="cbxAdmin" type="checkbox" {% if new == 0 and userData.booAdmin == 1 %}checked="checked"{% endif %}/>Super<span class="accesskey">A</span>min?</label><br />  
 <label for="strLanguage" accesskey="l"><span class="accesskey">L</span>anguage</label>
 <select id="strLanguage" name="strLanguage">
 <option value="de">Deutsch</option>

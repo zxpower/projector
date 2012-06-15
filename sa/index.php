@@ -14,6 +14,7 @@
 		SA_BASE => 'index',
 		SA_BASE.'add' => 'addUser',
 		SA_BASE.'edit/[a-zA-Z0-9]+' => 'editUser',
+		SA_BASE.'delete/[a-zA-Z0-9]+' => 'index',
 		SA_BASE.'login' => 'login',
 		SA_BASE.'logout' => 'logout',
 		SA_BASE.'projects' => 'index',
@@ -82,16 +83,7 @@
 	class addUser {
 		function GET() {
 			if($_SESSION['is_logged_in']) {
-				header('Location: '.SA_BASE);
-				exit();
-			} else {
-				header('Location: '.SA_BASE.'login/');
-				exit();
-			}
-		}
-		function POST() {
-			if($_SESSION['is_logged_in']) {
-				header('Location: '.SA_BASE);
+				header('Location: '.SA_BASE.'edit/new/');
 				exit();
 			} else {
 				header('Location: '.SA_BASE.'login/');
@@ -108,15 +100,15 @@
 				$userData = $_SESSION['db']->line("select * from sillaj_user where strUserId = '".$userId."'");
 				if(!empty($userData)) {
 					$headerText = 'Edit';
-					$newStatus = false;
+					$newStatus = 0;
 				} else {
 					$headerText = 'Add';
-					$newStatus = true;
+					$newStatus = 1;
 				}
 				$options = array(
 					'installpath' => SA_BASE,
 					'pageheader' => $headerText.' User',
-					'menu' => true,
+					'menu' => 1,
 					'new' => $newStatus,
 					'userId' => $userId,
 					'userData' => $userData

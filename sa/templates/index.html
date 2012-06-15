@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}User Admin{% endblock %}
+{% block head %}
+	{{ parent() }}
+	
+	<script type="text/javascript" src="{{ installpath }}script.js"></script>
+{% endblock %}
 {% block submenu1 %}
 	<ul>
 		<li><a href="{{ installpath }}add/">Add user</a></li>
@@ -16,6 +21,7 @@
 				<th>E-mail</th>
 				<th>Active?</th>
 				<th>Admin?</th>
+				<th>&nbsp;</th>
 			</tr>
         	{% for user in allusers %}
             	<tr>
@@ -23,8 +29,9 @@
 					<td>{{ user.strName|e }}</td>
 					<td>{{ user.strFirstname|e }}</td>
 					<td>{{ user.strEmail|e }}</td>
-					<td class="center">{% if user.booActive == 1 %}<img src="{{ installpath }}img/checkmark-10.gif" alt="OK" />{% else %}&nbsp;{% endif %}</td>
-					<td class="center">{% if user.booAdmin == 1 %}<img src="{{ installpath }}img/checkmark-10.gif" alt="OK" />{% else %}&nbsp;{% endif %}</td>
+					<td class="center">{% if user.booActive == 1 %}<img src="{{ installpath }}img/tick.png" alt="" />{% else %}&nbsp;{% endif %}</td>
+					<td class="center">{% if user.booAdmin == 1 %}<img src="{{ installpath }}img/tick.png" alt="" />{% else %}&nbsp;{% endif %}</td>
+					<td class="center"><a href="#" onclick="deleteUser('{{ user.strUserId|e }}', '{{ installpath }}delete/{{ user.strUserId|e }}');"><img src="{{ installpath }}img/delete.png" alt="Delete user?" /></a></td>
 				</tr>
         	{% endfor %}
     	</table>
