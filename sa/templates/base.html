@@ -3,12 +3,12 @@
     <head>
         {% block head %}
             <link rel="stylesheet" href="{{ installpath }}style.css" />
-            <title>{{ pageheader }} - Projector</title>
+            <title>{{ pageheader }} &raquo; Projector</title>
         {% endblock %}
     </head>
     <body>
 		<div id="header">
-			<h1 style="color: green;"><a href="{{ installpath }}">Projector</a></h1>
+			<h1 id="sysname"><a href="{{ installpath }}">Projector</a></h1>
 			<h2>{{ pageheader }}</h2>
 		</div>
 		{% if menu == true %}

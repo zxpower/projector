@@ -128,3 +128,20 @@ td, th {
 .altrow {
 	background-color: #ddd;
 }
+
+#loginwindow {
+	width: 140px;
+	border: 1px solid #666;
+	margin: 0 auto 0 auto;
+	padding: 30px;
+}
+
+#footer {
+	font-size: 0.7em;
+}
+
+#sysname a {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+}
