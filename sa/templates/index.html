@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="{{ installpath }}script.js"></script>
 {% endblock %}
 {% block submenu1 %}
-	<ul>
+	<ul id="submenu1">
 		<li><a href="{{ installpath }}add/">Add user</a></li>
 	</ul>
 {% endblock %}
@@ -23,8 +23,9 @@
 				<th>Admin?</th>
 				<th>Delete?</th>
 			</tr>
+			{% set altrow = true %}
         	{% for user in allusers %}
-            	<tr>
+            	<tr{% if altrow == true %} class="altrow"{% set altrow = false %}{% else %}{% set altrow = true %}{% endif %}>
 					<td><a href="{{ installpath }}edit/{{ user.strUserId|e }}">{{ user.strUserId|e }}</a></td>
 					<td>{{ user.strName|e }}</td>
 					<td>{{ user.strFirstname|e }}</td>

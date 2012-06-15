@@ -11,10 +11,10 @@
 			<h1 style="color: green;"><a href="{{ installpath }}">Projector</a></h1>
 			<h2>{{ pageheader }}</h2>
 		</div>
-		<hr />
 		{% if menu == true %}
 			<div id="menu">
-				<ul>
+				<ul id="mainmenu">
+					{# onmouseover="document.getElementById('submenu1').style.display='block'; document.getElementById('submenu1').style.position='absolute';" onmouseout="document.getElementById('submenu1').style.display='none';" #}
 					<li><a href="{{ installpath }}">Users</a>{% block submenu1 %}{% endblock %}</li>
 					{#
 					<li><a href="{{ installpath }}projects/">Projects</a>{% block submenu2 %}{% endblock %}</li>

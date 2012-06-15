@@ -8,7 +8,7 @@
 {% endblock %}
 {% block title %}{% if new == 1 %}Add{% else %}Edit{% endif %}User{% endblock %}
 {% block submenu1 %}
-	<ul>
+	<ul id="submenu1">
 		<li><a href="{{ installpath }}add/">Add user</a></li>
 	</ul>
 {% endblock %}
@@ -17,7 +17,7 @@
 <fieldset>    
 <legend>{% if new == 1 %}Add{% else %}Edit{% endif %} user information</legend>
 <input type="hidden" name="userId" value="{% if new == 0 %}{{ userId }}{% endif %}" />
-<input type="hidden" name="status" value="{% if new == 0 %}false{% else %}true{% endif %}" />
+<input type="hidden" name="new" value="{% if new == 0 %}false{% else %}true{% endif %}" />
 <label for="strUserId" accesskey="l"><span class="accesskey">L</span>ogin</label><input type="text" id="strUserId" name="strUserId" {% if new == 0 %}disabled="disabled" {% endif %}value="{% if new == false %}{{ userId }}{% endif %}" /><br />     
 <label for="strName" accesskey="n"><span class="accesskey">N</span>ame</label><input type="text" id="strName" name="strName" value="{% if new == 0 %}{{ userData.strName|e }}{% endif %}" /><br />
 <label for="strFirstname" accesskey="f"><span class="accesskey">F</span>irst name</label><input type="text" id="strFirstname" name="strFirstname" value="{% if new == 0 %}{{ userData.strFirstname|e }}{% endif %}" /><br />
