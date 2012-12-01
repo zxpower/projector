@@ -1,5 +1,7 @@
 <?php
+	$lifetime=3600;
 	session_start();
+	setcookie(session_name(),session_id(),time()+$lifetime);
 
 	require_once 'config.php';
 
@@ -70,7 +72,8 @@
 					'installpath' => SA_BASE,
 					'pageheader' => 'User Manager',
 					'menu' => true,
-					'allusers' => $allUsers
+					'allusers' => $allUsers,
+					'userId' => $_SESSION['user_id']
 				);
 				echo $_SESSION['twig']->render('index.html', $options);
 			} else {
@@ -111,8 +114,11 @@
 					'menu' => 1,
 					'new' => $newStatus,
 					'userId' => $userId,
-					'userData' => $userData
+					'userData' => $userData,
+					'errormsg' => $_SESSION['errormsg'],
+					'loggedUserId' => $_SESSION['user_id']
 				);
+				$_SESSION['errormsg'] = '';
 				echo $_SESSION['twig']->render('addedit.html', $options);
 			} else {
 				header('Location: '.SA_BASE.'login/');
@@ -121,11 +127,132 @@
 		}
 		function POST() {
 			if($_SESSION['is_logged_in']) {
+				if(isset($_POST['new']) && !empty($_POST['new'])) {
+					if($_POST['new'] == 'true') {
+						$newStatus = 1;
+					} else {
+						$newStatus = 0;
+					}
+				} else {
+					$_SESSION['errormsg'] = 'Form contains hidden errors!';
+					header('Location: '.SA_BASE.'edit/new');
+					exit();
+				}
+				if(isset($_POST['userId']) && empty($_POST['userId']) && $newStatus && 
+					isset($_POST['strUserId']) && !empty($_POST['strUserId'])) {
+					$userId = getField($_POST['strUserId']);
+				} elseif(isset($_POST['userId']) && !empty($_POST['userId']) && !$newStatus ) {
+					$userId = getField($_POST['userId']);
+				} else {
+					$_SESSION['errormsg'] = 'Missing login!';
+					header('Location: '.SA_BASE.'edit/new');
+					exit();
+				}
+				$userIdCheck = $_SESSION['db']->line("select * from sillaj_user where strUserId = '".$userId."'");
+				if(!empty($userIdCheck) && $userIdCheck['strUserId'] == $userId && $newStatus) {
+					$_SESSION['errormsg'] = 'User with such login already exists!';
+					header('Location: '.SA_BASE.'edit/new');
+					exit();
+				}
+				if(isset($_POST['strName'])) {
+					$name = getField($_POST['strName']);
+				} else {
+					$name = '';
+				}
+				if(isset($_POST['strFirstname'])) {
+					$firstname = getField($_POST['strFirstname']);
+				} else {
+					$firstname = '';
+				}
+				if(isset($_POST['strPassword']) && !empty($_POST['strPassword'])) {
+					$md5password = md5($_POST['strPassword']);
+				} else {
+					$md5password = '';
+				}
+				if(empty($md5password) && $newStatus) {
+					$_SESSION['errormsg'] = 'Password missing!';
+					header('Location: '.SA_BASE.'edit/new');
+					exit();
+				}
+				if(isset($_POST['strEmail']) && !empty($_POST['strEmail'])) {
+					$email = getField($_POST['strEmail']);
+				} else {
+					$_SESSION['errormsg'] = 'E-mail missing!';
+					if($newStatus) {
+						header('Location: '.SA_BASE.'edit/new');
+					} else {
+						header('Location: '.SA_BASE.'edit/'.$userId);
+					}
+					exit();
+				}
+				$emailCheck = $_SESSION['db']->line("select * from sillaj_user where strEmail = '".$email."'");
+				if(!empty($emailCheck) && $emailCheck['strEmail'] == $email && $newStatus) {
+					$_SESSION['errormsg'] = 'User with such e-mail address already exists!';
+					header('Location: '.SA_BASE.'edit/new');
+					exit();
+				} elseif(!empty($emailCheck) && $emailCheck['strEmail'] == $email && $userId != $emailCheck['strUserId'] && !$newStatus) {
+					$_SESSION['errormsg'] = 'User with such e-mail address already exists!';
+					header('Location: '.SA_BASE.'edit/'.$userId);
+					exit();
+				}
+				if(isset($_POST['cbxActive'])) {
+					$active = 1;
+				} else {
+					$active = 0;
+				}
+				if(isset($_POST['cbxUseShare'])) {
+					$useShare = 1;
+				} else {
+					$useShare = 0;
+				}
+				if(isset($_POST['cbxAllowOther'])) {
+					$allowOther = 1;
+				} else {
+					$allowOther = 0;
+				}
+				if(isset($_POST['cbxAdmin'])) {
+					$admin = 1;
+				} else {
+					$admin = 0;
+				}
+				if(isset($_POST['strLanguage'])) {
+					$language = $_POST['strLanguage'];
+				} else {
+					$language = 'en';
+				}
+				if(isset($_POST['strTemplate'])) {
+					$template = $_POST['strTemplate'];
+				} else {
+					$template = 'default';
+				}
 				
-				debugVar($_POST);
-				echo '<a href="'.SA_BASE.'">Back</a>';
-				//header('Location: '.SA_BASE);
-				//exit();
+				if( $newStatus ) {
+					$_SESSION['db']->s("
+						insert into sillaj_user 
+							(strUserId, strName, strFirstname, strEmail, strPassword, booActive, booUseShare, booAllowOther, booAdmin, strLanguage, strTemplate)
+						values
+							('".$userId."', '".$name."', '".$firstname."', '".$email."', '".$password."', '".$active."', '".$useShare."', '".$allowOther."', '".$admin."', '".$language."', '".$template."')");
+				} else {
+					if(!empty($md5password)) {
+						$password = "strPassword = '".$md5password."',";
+					}
+					$_SESSION['db']->s("
+						update sillaj_user set
+							strName = '".$name."',
+							strFirstname = '".$firstname."',
+							strEmail = '".$email."',
+							".$password."
+							booActive = '".$active."',
+							booUseShare = '".$useShare."',
+							booAllowOther = '".$allowOther."',
+							booAdmin = '".$admin."',
+							strLanguage = '".$language."',
+							strTemplate = '".$template."'
+						where strUserId = '".$userId."'");
+				}
+
+				header('Location: '.SA_BASE);
+				exit();
 			} else {
 				header('Location: '.SA_BASE.'login/');
 				exit();
@@ -175,6 +302,7 @@
 			$line = $_SESSION['db']->line("select * from sillaj_user where strUserId = '".$username."' and strPassword = '".$password."' and booAdmin = '1'");
 			if(!empty($line)) {
 				$_SESSION['is_logged_in'] = true;
+				$_SESSION['user_id'] = $line['strUserId'];
 				header('Location: '.SA_BASE);
 				exit();
 			} else {
@@ -188,6 +316,7 @@
 	class logout {
 		function GET() {
 			$_SESSION['is_logged_in'] = false;
+			$_SESSION['user_id'] = '';
 			header('Location: '.SA_BASE.'login/');
 			exit();
 		}
